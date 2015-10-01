@@ -46,7 +46,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-12">
-                                <form id="login-form" action="http://phpoll.com/login/process" method="post" role="form" style="display: block;">
+                                <form id="login-form" method="post" role="form" style="display: block;">
                                     <div class="form-group">
                                         <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
                                     </div>
@@ -74,7 +74,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <form id="register-form" action="http://phpoll.com/register/process" method="post" role="form" style="display: none;">
+                                <form id="register-form" method="post" role="form" style="display: none;">
                                     <div class="form-group">
                                         <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
                                     </div>
@@ -125,45 +125,63 @@
 
     <script>
     $(function(){
-        $('#login-submit').on('click', function(event) {
-         Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl");
+        event.preventDefault();
+        $('#login-submit').submit(function(event) {
+         Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl"); 
 
-         Parse.User.logIn('username','password').then(function(user)
-         {
-            window.location.href = "http://stackoverflow.com";
+         var form = document.getElementById("login-form")
 
-        }, function(error) {
+         var usernameVal = form.username.value; 
+         var passwordVal = form.password.value; 
+         //var emailVal = form.email.value; 
+
+         Parse.User.logIn(null, {
+         success: function(user) {
+            form.submit();
+            window.location.replace("http://stackoverflow.com");
+            alert("Account Found!");
+
+        }, error: function(user,error) {
+            window.location.replace("http://stackoverflow.com");
+            alert("Account not found!");
+        }
 
         });
-
-        var TestObject = Parse.Object.extend("TestObject");
-        var testObject = new TestObject();
-        testObject.save({foo: "bar"}).then(function(object) {
-          var msgbox = Windows.UI.Popups.MessageDialog("yay! it worked");
-          return msgbox.showAsync();
-      });
-    });
-});
-</script>  
-
-<script>
-$(function(){
-    $('#register-submit').on('click', function(event) {
-     Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl");
-
-     var user = new Parse.User();
-     user.set('username','username');
-     user.set('password','password');
-     user.set('email','email');
-
-     user.signUp().then(function(user) {
-
-     }, function(error){
-
      });
- });
-});
-</script>  
+    });
+    </script>  
+
+    <script>
+    $(function(){
+        event.preventDefault();
+        $('#register-form').submit(function(event) {
+         Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl");
+         var user = new Parse.User();
+
+         var form = document.getElementById("register-form")
+
+         var usernameVal = form.username.value; 
+         var passwordVal = form.password.value; 
+         var emailVal = form.email.value; 
+    
+         user.set("username",usernameVal);
+         user.set("password",passwordVal);
+         user.set("email",emailVal);
+
+         user.signUp(usernameVal , passwordVal, {
+            success: function(user) {
+            form.submit();
+            alert("Account Successfully Created!");
+
+            }, error: function(user,error){
+                console.error('ERROR : ' + error.text + error.status)
+                //alert("Account Not Created!");
+                //alert(error);
+            }
+        });
+     });
+    });
+    </script>  
 
 
 </body>
