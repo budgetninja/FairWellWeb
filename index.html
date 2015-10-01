@@ -46,7 +46,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-12">
-                                <form id="login-form" method="post" role="form" style="display: block;">
+                                <div id="login-form" method="post" role="form" style="display: block;">
                                     <div class="form-group">
                                         <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
                                     </div>
@@ -126,29 +126,32 @@
     <script>
     $(function(){
         event.preventDefault();
-        $('#login-form').submit(function(event) {
+        $('#login-submit').click(function(event) {
          Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl"); 
 
          var form = document.getElementById("login-form")
 
-         var usernameVal = form.username.value; 
-         var passwordVal = form.password.value; 
+         var usernameVal = document.getElementById("username").value; 
+         var passwordVal = document.getElementById("password").value; 
          //var emailVal = form.email.value; 
 
          Parse.User.logIn(usernameVal, passwordVal, {
          success: function(user) {
-            form.submit();
             window.location.replace("dashboard.html");
-            alert("Account Found!");
 
         }, error: function(user,error) {
-            window.location.replace("http://stackoverflow.com");
-            alert("Account not found!");
+            console.log(error.code + " " + error.message);
+              alert("Account not found!");
         }
 
         });
+
+                 Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl"); 
+        var curUser = Parse.User.current();
+        console.log(curUser);
      });
     });
+    
     </script>  
 
     <script>
