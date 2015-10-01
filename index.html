@@ -135,10 +135,10 @@
          var passwordVal = form.password.value; 
          //var emailVal = form.email.value; 
 
-         Parse.User.logIn(null, {
+         Parse.User.logIn(usernameVal, passwordVal, {
          success: function(user) {
             form.submit();
-            window.location.replace("http://stackoverflow.com");
+            window.location.replace("dashboard.html");
             alert("Account Found!");
 
         }, error: function(user,error) {
