@@ -133,7 +133,6 @@
 
          var usernameVal = document.getElementById("username").value; 
          var passwordVal = document.getElementById("password").value; 
-         //var emailVal = form.email.value; 
 
          Parse.User.logIn(usernameVal, passwordVal, {
          success: function(user) {
@@ -145,10 +144,6 @@
         }
 
         });
-
-                 Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl"); 
-        var curUser = Parse.User.current();
-        console.log(curUser);
      });
     });
     
@@ -163,17 +158,9 @@
 
          var form = document.getElementById("register-form");
 
-         //var usernameVal = document.getElementById("username").value; 
-         //var passwordVal = document.getElementById("password").value; 
-         //var emailVal = document.getElementById("email").value; 
-
          var usernameVal = form.username.value;
          var passwordVal = form.password.value;
          var emailVal = form.email.value;
-
-         console.log(usernameVal); 
-            console.log(passwordVal);
-            console.log(emailVal);
     
          user.set('username',usernameVal);
          user.set('password',passwordVal);
@@ -183,13 +170,9 @@
             success: function(user) {
                 form.submit();
                 window.location.replace("index.html");
-            //form.submit();
-            //alert("Account Successfully Created!");
 
             }, error: function(user,error){
                 console.error('ERROR : ' + error.text + error.status)
-                //alert("Account Not Created!");
-                //alert(error);
             }
         });
      });
