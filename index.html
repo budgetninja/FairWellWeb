@@ -16,18 +16,21 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- HomePage Styling -->
     <link href="css/entry.css" rel = "stylesheet">
 
+    <!-- Parse Core -->
     <script src="js/parse-1.6.4.js"></script>
 
+    <!-- Jquery Core -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 </head>
 
 <body>
-<p align = "center">
-    <img src="title.png" style="width:230px;height:98px;" align = "center">
-</p>
+    <p align = "center">
+        <img src="title.PNG" style="width:230px;height:98px;" align = "center">
+    </p>
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
@@ -127,24 +130,24 @@
     $(function(){
         event.preventDefault();
         $('#login-submit').click(function(event) {
-         Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl"); 
+           Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl"); 
 
-         var form = document.getElementById("login-form")
+           var form = document.getElementById("login-form")
 
-         var usernameVal = document.getElementById("username").value; 
-         var passwordVal = document.getElementById("password").value; 
+           var usernameVal = document.getElementById("username").value; 
+           var passwordVal = document.getElementById("password").value; 
 
-         Parse.User.logIn(usernameVal, passwordVal, {
-         success: function(user) {
-            window.location.replace("dashboard.html");
+           Parse.User.logIn(usernameVal, passwordVal, {
+               success: function(user) {
+                window.location.replace("dashboard.html");
 
-        }, error: function(user,error) {
-            console.log(error.code + " " + error.message);
-              alert("Account not found!");
-        }
+            }, error: function(user,error) {
+                console.log(error.code + " " + error.message);
+                alert("Account not found!");
+            }
 
         });
-     });
+       });
     });
     
     </script>  
@@ -153,20 +156,20 @@
     $(function(){
         event.preventDefault();
         $('#register-form').submit(function(event) {
-         Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl");
-         var user = new Parse.User();
+           Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl");
+           var user = new Parse.User();
 
-         var form = document.getElementById("register-form");
+           var form = document.getElementById("register-form");
 
-         var usernameVal = form.username.value;
-         var passwordVal = form.password.value;
-         var emailVal = form.email.value;
-    
-         user.set('username',usernameVal);
-         user.set('password',passwordVal);
-         user.set('email',emailVal);
+           var usernameVal = form.username.value;
+           var passwordVal = form.password.value;
+           var emailVal = form.email.value;
 
-         user.signUp(usernameVal, passwordVal, emailVal, {
+           user.set('username',usernameVal);
+           user.set('password',passwordVal);
+           user.set('email',emailVal);
+
+           user.signUp(usernameVal, passwordVal, emailVal, {
             success: function(user) {
                 form.submit();
                 window.location.replace("index.html");
@@ -175,7 +178,7 @@
                 console.error('ERROR : ' + error.text + error.status)
             }
         });
-     });
+       });
     });
     </script>  
 
@@ -183,7 +186,7 @@
 </body>
 
 <footer>
- 
+
 </footer>
 
 </html>
