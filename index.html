@@ -169,7 +169,7 @@
            user.signUp(usernameVal, passwordVal, emailVal, {
             success: function(user) {
                 form.submit();
-                window.location.replace("dashboard.html");
+                window.location.replace("index.html");
 
             }, error: function(user,error){
                 console.error('ERROR : ' + error.text + error.status)
