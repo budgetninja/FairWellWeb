@@ -146,11 +146,13 @@
         console.log(user.get('username'));
     });
                 //var currentUser = Parse.User.getCurrentUser();
+
+                document.getElementById("welMessage").innerHTML = currentUser;
                 document.write("Welcome Back " + Parse.User.current().getUsername());
                 console.log(currentUser);
                 </script>  
 
-                <h2 id = "Welcome message">
+                <h2 id = "welMessage">
                     Welcome back  !          
                 </h2>
 
