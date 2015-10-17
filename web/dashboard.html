@@ -146,12 +146,12 @@
         console.log(user.get('username'));
     });
                 //var currentUser = Parse.User.getCurrentUser();
-                document.write(Parse.User.current().getUsername());
+                document.getElementById("welcomeMessage").innerHTML = ("Welcome Back" + Parse.User.current().getUsername());
                 console.log(currentUser);
                 </script>  
 
-                <h2>
-                    Welcome back  !          
+                <h2 id = "welcomeMessage">
+                          
                 </h2>
 
                 <h2> # Current Balance : $25.50 </h2>
