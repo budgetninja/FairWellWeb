@@ -141,13 +141,13 @@
 
     <script type="text/javascript">
     Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl");
-    var currentUser = Parse.User.getUsername();
+    //var currentUser = Parse.User.getUsername();
     Parse.User.current().fetch().then(function (user) {
         console.log(user.get('username'));
     });
                 //var currentUser = Parse.User.getCurrentUser();
-                document.write(currentUser);
-                console.log(currentUser);
+                document.write(Parse.User.getUsername());
+                console.log(Parse.User.getUsername());
                 </script>  
 
                 <h2>
