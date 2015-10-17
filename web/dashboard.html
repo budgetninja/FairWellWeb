@@ -231,7 +231,7 @@
         event.preventDefault();
         $('#logOut').click(function(event) {
            Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl"); 
-           ParseUser.getCurrentUser().logOut();     
+           Parse.User.getCurrentUser().logOut();     
            console.log("Logged out");   
        });
     });
