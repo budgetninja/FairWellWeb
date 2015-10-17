@@ -169,7 +169,7 @@
            user.signUp(usernameVal, passwordVal, emailVal, {
             success: function(user) {
                 form.submit();
-                myFunction();
+                window.alert("Account Successfully Created!");
                 location.reload();
 
             }, error: function(user,error){
