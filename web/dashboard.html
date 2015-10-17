@@ -143,11 +143,11 @@
     Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl");
     var currentUser = Parse.User.current();
     Parse.User.current().fetch().then(function (user) {
-        user.get('username');
+        console.log(user.get('username'));
     });
                 //var currentUser = Parse.User.getCurrentUser();
                 document.write(currentUser);
-                Console.log(currentUser);
+                console.log(currentUser);
                 </script>  
 
                 <h2>
@@ -178,7 +178,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="http://budgetninja.github.io">
                             Company
                         </a>
                     </li>
