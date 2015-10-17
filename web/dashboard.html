@@ -119,7 +119,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="index.html">
+                            <a id = "logOut" href="index.html">
                                 Log out
                             </a>
                         </li> 
@@ -134,7 +134,17 @@
         <style>     
         h2{margin-left: 20px}     
         button{margin-left: 20px;} 
-         </style>    
+         </style>  
+
+          <script type="text/javascript">
+            Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl");
+            var currentUser = ParseUser.getCurrentUser();
+            </script>  
+
+         <h2>
+            Welcome back  !          
+         </h2>
+
         <h2> # Current Balance : $25.50 </h2>
 
                   <button type="button" class="btn btn-primary"> <a href = "table.html">View Bills </a></button>
@@ -208,5 +218,14 @@
 	
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="assets/js/demo.js"></script>
+
+     <script>
+    $(function(){
+        event.preventDefault();
+        $('#logOut').click(function(event) {
+           Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl"); 
+           ParseUser.getCurrentUser().logOut();        
+       });
+    });
     
 </html>
