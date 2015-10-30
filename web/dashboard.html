@@ -142,15 +142,10 @@
     </style>  
 
     <script type="text/javascript">
-    Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl");
+    Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
     var element = document.getElementById("welMessage");
     element.innerHTML = "Welcome Back " + (Parse.User.current().getUsername());
     </script>  
-
-
-
-
-
 
     <h2> # Current Balance : $25.50 </h2>
 
@@ -158,13 +153,9 @@
     <button type="button" class="btn btn-primary"><a href = "table.html"> Add Bills </a></button>
     <button type="button" class="btn btn-primary"> <a href = "table.html">Resolve Bills </a></button>
 
-
-
     </div>        
     </div>    
     </div>
-
-
 
     <footer class="footer">
         <div class="container-fluid">
@@ -230,7 +221,7 @@
     $(function(){
         event.preventDefault();
         $('#logOut').click(function(event) {
-           Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl"); 
+           Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
            console.log("Logged out");  
            Parse.User.logOut();     
             
