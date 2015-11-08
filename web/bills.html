@@ -341,7 +341,7 @@
         allBills.set("Note","Food");
         allBills.set("Amount","100");
 
-        allBills.save(null, {
+        allBills.save("UserID","Note", {
             sucess: function(allBills){
                 alert('worked');
         }, error: function(allBills,error){
