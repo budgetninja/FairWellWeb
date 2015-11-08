@@ -341,12 +341,11 @@
         var note = document.getElementById("Note").value;
         var amount = document.getElementById("Amount").value;
 
-        //allBills.set("UserID",uID);
-        //allBills.set("Note",note);
-        //allBills.set("Amount",amount);
+        allBills.set("UserID","uID");
+        allBills.set("Note","note");
+        allBills.set("Amount",amount);
 
-        allBills.save({username: "Sauravmo", note: note, amount: amount}
-            , {
+        allBills.save(null, {
             sucess: function(allBills){
                 //form.submit();
                 alert('worked');
