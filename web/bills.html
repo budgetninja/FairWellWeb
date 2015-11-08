@@ -352,9 +352,9 @@
         allBills.set("Note",note);
         allBills.set("Amount",amount);
 
-        allBills.save( null, {
+        allBills.save( uID, note, amount, {
             sucess: function(allBills){
-                form.submit();
+                //form.submit();
                 alert('worked');
         }, error: function(allBills,error){
             alert('failed');
