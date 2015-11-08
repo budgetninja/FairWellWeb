@@ -144,7 +144,7 @@
           <input type="text" placeholder="UserID" name = "UserID" class="form-control" maxlength="5"> 
           <input type="text" placeholder="Note"   name = "Note" class="form-control" maxlength="5"> 
           <input type="text" placeholder="Amount" name = "Amount" class="form-control" maxlength="5"> 
-          <button type="submit" class="btn btn-primary" id="submitBtn"> Add Bill »</button>                                  
+          <button type="submit" onclick = "addFunc()" class="btn btn-primary" id="submitBtn"> Add Bill »</button>                                  
         </div>
       </form>
     </div>
@@ -331,44 +331,25 @@
     </script>
 
     <script>
+    function addFunc(){
         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
+    
+        var AllBills = Parse.Object.extend("AllBills");
+        var allBills = new AllBills();
 
-        var ParseObj = Parse.Object.extend('test'); //create local parse object from your Parse class
+        allBills.set("UserID","Mohitbha");
+        allBills.set("Note","Food");
+        allBills.set("Amount","100");
 
-        $('#addBillForm').submit(function(e) {
-        //on form submit
-            e.preventDefault();
-
-            var Test = new test();
-            Test.set("UserID" , "Mohit");
-
-            //get data from form
-            var data = {
-                fname: $("#UserID").val(),
-                lname: $("#Note").val(),
-                email: $("#Amount").val()
-            };
-
-            //create new Parse object
-            parseObj = new ParseObj();
-
-            //match the key values from the form, to your parse class, then save it
-            Test.save(data, {
-                    //if successful
-                    success: function(parseObj) {
-                            alert(parseObj.get('fname') + " " + parseObj.get('lname') + " " + parseObj.get('email') + " saved to Parse.")
-                        }
-                    ,
-                    error: function(parseObj, error) {
-                        console.log(parseObj);
-                        console.log(error);
-                    }
-                }
-            );
+        allBills.save(null, {
+            sucess: function(allBills){
+                alert('worked');
+        }, error: function(allBills,error){
+            alert('failed');
+        }
+        });
         });
     </script>
-
-
 
 	
 </html>
