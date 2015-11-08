@@ -356,6 +356,7 @@ function addFunc(){
 
         allBills.save(null, {
             sucess: function(allBills){
+                window.location.replace("bills.html");
                 //form.submit();
                 alert('worked');
             }, error: function(allBills,error){
