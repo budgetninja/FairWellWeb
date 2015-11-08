@@ -355,7 +355,7 @@ function addFunc() {
     allBills.set("Note",note);
     allBills.set("Amount",amount);
 
-    allBills.save(null, {
+    allBills.save(uID, note, amount, {
         sucess: function(allBills){
                 //form.submit();
                 alert('worked');
