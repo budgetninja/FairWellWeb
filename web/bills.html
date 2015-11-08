@@ -139,12 +139,12 @@
 
 
     <div id="popover-content" class="hide">
-      <form class="form-inline" role="form">
+      <form class="form-inline" id = "addBillForm" role="form" method="post" action="">
         <div class="form-group">
-          <input type="text" placeholder="UserID" class="form-control" maxlength="5"> 
-          <input type="text" placeholder="Note" class="form-control" maxlength="5"> 
-          <input type="text" placeholder="Amount" class="form-control" maxlength="5"> 
-          <button type="submit" class="btn btn-primary"> Add Bill »</button>                                  
+          <input type="text" placeholder="UserID" name = "UserID" class="form-control" maxlength="5"> 
+          <input type="text" placeholder="Note"   name = "Note" class="form-control" maxlength="5"> 
+          <input type="text" placeholder="Amount" name = "Amount" class="form-control" maxlength="5"> 
+          <button type="submit" class="btn btn-primary" id="submitBtn"> Add Bill »</button>                                  
         </div>
       </form>
     </div>
@@ -307,6 +307,7 @@
 	<!--  Charts Plugin -->
 	<script src="assets/js/chartist.min.js"></script>
 
+    <script src="js/parse-1.6.4.js"></script>
     <!--  Notifications Plugin    -->
     <script src="assets/js/bootstrap-notify.js"></script>
     
@@ -319,12 +320,55 @@
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="assets/js/demo.js"></script>
 
-    <script type="text/javascript">$("[data-toggle=popover]").popover({
+    <script type="text/javascript">
+    $("[data-toggle=popover]").popover({
     html: true, 
     content: function() {
           return $('#popover-content').html();
         }
-});</script>
+    });
+
+    </script>
+
+    <script>
+        Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
+
+        var ParseObj = Parse.Object.extend('test'); //create local parse object from your Parse class
+
+        $('#addBillForm').submit(function(e) {
+        //on form submit
+            e.preventDefault();
+
+            var Test = new test();
+            Test.set("UserID" , "Mohit");
+
+            //get data from form
+            var data = {
+                fname: $("#UserID").val(),
+                lname: $("#Note").val(),
+                email: $("#Amount").val()
+            };
+
+            //create new Parse object
+            parseObj = new ParseObj();
+
+            //match the key values from the form, to your parse class, then save it
+            Test.save(data, {
+                    //if successful
+                    success: function(parseObj) {
+                            alert(parseObj.get('fname') + " " + parseObj.get('lname') + " " + parseObj.get('email') + " saved to Parse.")
+                        }
+                    ,
+                    error: function(parseObj, error) {
+                        console.log(parseObj);
+                        console.log(error);
+                    }
+                }
+            );
+        });
+    </script>
+
+
 
 	
 </html>
