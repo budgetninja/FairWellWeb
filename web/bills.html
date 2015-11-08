@@ -121,11 +121,11 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                           <a href="user.html">
-                               Account
-                           </a>
-                       </li>
-                       <li>
+                         <a href="user.html">
+                             Account
+                         </a>
+                     </li>
+                     <li>
                         <a href="index.html">
                             Log out
                         </a>
@@ -140,34 +140,24 @@
 
     <div id="popover-content" class="hide">
 
-        <div class="container">
-  <h2>Form control: input</h2>
-  <p>The form below contains two input elements; one of type text and one of type password:</p>
-  <form role="form">
-    <div class="form-group">
-      <label for="usr">Name:</label>
-      <input type="text" class="form-control" id="usr">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd">
-    </div>
-  </form>
-</div>
-
-
-        
-      <form class="form-inline" id = "addBillForm" role="form" method="post" action="">
+      <h2>- Add a Bill -</h2>
+      <p>Enter UserID, Note & Amount</p>
+      <form role="form">
         <div class="form-group">
-          <input type="text" placeholder="UserID" id = "UserID"  name = "UserID" class="form-control" maxlength="26"> 
-          <input type="text" placeholder="Note"   id = "Note"  name = "Note" class="form-control" maxlength="26"> 
-          <input type="text" placeholder="Amount" id = "Amount"  name = "Amount" class="form-control" maxlength="5"> 
-          <button type="submit" onclick = "addFunc()" class="btn btn-primary" id="submitBtn"> Add Bill »</button>                                  
+          <label>UserID:</label>
+          <input type="text" class="form-control" id="usr">
       </div>
+      <div class="form-group">
+          <label>Note:</label>
+          <input type="text" class="form-control" id="nte">
+      </div>
+      <div class="form-group">
+          <label>Amount:</label>
+          <input type="text" class="form-control" id="amnt">
+      </div>
+      <button type="submit" onclick="addFunc()" id="submitBtn" class="btn btn-default">Add Bill</button>
   </form>
 </div>
-
-
 
 <div class="content">
     <div class="container-fluid">
@@ -189,30 +179,30 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                 <td>1</td>
-                                 <td>Admin 1</td>
-                                 <td>Food</td>
-                                 <td>$100</td>
-                                 <td>10/05/2015</td>
-                                 <td><i class="fa fa-usd"></i></td>
-                             </tr>
-                             <tr>
-                                 <td>2</td>
-                                 <td>Admin 2</td>
-                                 <td>More Food</td>
-                                 <td>$200</td>
-                                 <td>10/11/2015</td>
-                             </tr>
+                                   <td>1</td>
+                                   <td>Admin 1</td>
+                                   <td>Food</td>
+                                   <td>$100</td>
+                                   <td>10/05/2015</td>
+                                   <td><i class="fa fa-usd"></i></td>
+                               </tr>
+                               <tr>
+                                   <td>2</td>
+                                   <td>Admin 2</td>
+                                   <td>More Food</td>
+                                   <td>$200</td>
+                                   <td>10/11/2015</td>
+                               </tr>
 
-                         </tbody>
-                     </table>
+                           </tbody>
+                       </table>
 
-                 </div>
-             </div>
-         </div>  
+                   </div>
+               </div>
+           </div>  
 
 
-         <div class="col-md-12">
+           <div class="col-md-12">
             <div class="card card-plain">
                 <div class="header">
                     <h4 class="title">Resolved Bills</h4>
@@ -220,7 +210,7 @@
                 </div>
                 <div class="content table-responsive table-full-width">
                     <table class="table table-hover">
-                     <thead>
+                       <thead>
                         <th>UserID</th>
                         <th>Name</th>
                         <th>Note</th>
@@ -228,7 +218,7 @@
                         <th>Date Added</th>
                     </thead>
                     <tbody>
-                       <tr>
+                     <tr>
                         <td>1</td>
                         <td>Admin 1</td>
                         <td>Food</td>
@@ -297,12 +287,12 @@
                 </li>
                 <li>
                     <a href="#">
-                       Blog
-                   </a>
-               </li>
-           </ul>
-       </nav>
-       <p class="copyright pull-right">
+                     Blog
+                 </a>
+             </li>
+         </ul>
+     </nav>
+     <p class="copyright pull-right">
         &copy; 2015 Fairwell
     </p>
 </div>
@@ -352,35 +342,18 @@ $("[data-toggle=popover]").popover({
 function addFunc() {
     Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
 
-        var AllBills = Parse.Object.extend("AllBills");
-        var allBills = new AllBills();
-
-        //var uID = document.getElementById("UserID").value;
-        //var note = document.getElementById("Note").value;
-        //var amount = document.getElementById("Amount").value;
-
-    //oForm = document.forms[0];
-
-    var form = document.getElementById("addBillForm");
-
-    //var uID = form.UserID.value;
-    var note = form.Note.value;
-    var amount = form.Amount.value;
-
-
-    //var uID = oForm.elements["UserID"].value;
-    //var note = oForm.elements["Note"].value;
-    //var amount = oForm.elements["Amount"];
+    var AllBills = Parse.Object.extend("AllBills");
+    var allBills = new AllBills();
     
-    var uID    =    document.getElementById("UserID").value;
-    //var note   =    document.getElementById("Note").value;
-    //var amount =    document.getElementById("Amount").value;
+    var uID    =    document.getElementById("usr").value;
+    var note   =    document.getElementById("nte").value;
+    var amount =    document.getElementById("amnt").value;
 
-    //allBills.set("UserID",uID);
-    //allBills.set("Note",note);
-    //allBills.set("Amount",amount);
+    allBills.set("UserID",uID);
+    allBills.set("Note",note);
+    allBills.set("Amount",amount);
 
-    allBills.save({Username: "Sauravmo", Note: "Walmart", Amount: 1300}, {
+    allBills.save(null, {
         sucess: function(allBills){
                 //form.submit();
                 alert('worked');
