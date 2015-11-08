@@ -139,10 +139,9 @@
 
 
     <div id="popover-content" class="hide">
-
       <h2>- Add a Bill -</h2>
       <p>Enter UserID, Note & Amount</p>
-      <form role="form">
+      <form role="form" id = "addForm">
         <div class="form-group">
           <label>UserID:</label>
           <input type="text" class="form-control" id="usr">
@@ -158,6 +157,7 @@
       <button type="submit" onclick="addFunc()" id="submitBtn" class="btn btn-default">Add Bill</button>
   </form>
 </div>
+
 
 <div class="content">
     <div class="container-fluid">
@@ -339,7 +339,10 @@ $("[data-toggle=popover]").popover({
 </script>
 
 <script>
-function addFunc() {
+$(function(){
+        
+        $('#addForm').submit(function(event) {
+            event.preventDefault();
     Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
 
     var AllBills = Parse.Object.extend("AllBills");
@@ -361,8 +364,8 @@ function addFunc() {
                 alert('failed');
             }
         });
-
-}
+});
+});
 </script>
 
 
