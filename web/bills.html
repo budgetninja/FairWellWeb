@@ -338,9 +338,12 @@
 
         var ParseObj = Parse.Object.extend('test'); //create local parse object from your Parse class
 
-        $('#submitBtn').submit(function(e) {
+        $('#addBillForm').submit(function(e) {
         //on form submit
             e.preventDefault();
+
+            var Test = new test();
+            Test.set("UserID" , "Mohit");
 
             //get data from form
             var data = {
@@ -353,7 +356,7 @@
             parseObj = new ParseObj();
 
             //match the key values from the form, to your parse class, then save it
-            parseObj.save(data, {
+            Test.save(data, {
                     //if successful
                     success: function(parseObj) {
                             alert(parseObj.get('fname') + " " + parseObj.get('lname') + " " + parseObj.get('email') + " saved to Parse.")
