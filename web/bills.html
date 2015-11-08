@@ -343,8 +343,8 @@ function addFunc() {
 
     oForm = document.forms[0];
 
-    var uID = oForm.elements["UserID"];
-    var note = oForm.elements["Note"];
+    var uID = oForm.elements["UserID"].value;
+    var note = oForm.elements["Note"].value;
     var amount = oForm.elements["Amount"];
     
     ///var uID    =    document.getElementById("UserID").value;
@@ -355,7 +355,7 @@ function addFunc() {
     allBills.set("Note",note);
     allBills.set("Amount",amount);
 
-    allBills.save(uID, note, amount, {
+    allBills.save({username: uID, Note: note, Amount: amount}, {
         sucess: function(allBills){
                 //form.submit();
                 alert('worked');
