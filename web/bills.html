@@ -337,9 +337,14 @@
         var AllBills = Parse.Object.extend("AllBills");
         var allBills = new AllBills();
 
-        var uID = addBillForm.UserID.value;
-        var note = addBillForm.Note.value;
-        var amount = addBillForm.Amount.value;
+        oForm = document.forms[0];
+        var uID = oForm.elements["UserID"].value;
+        var note = oForm.elements["Note"].value;
+        var amount = oForm.elements["Amount"].value;
+
+        //var uID = addBillForm.UserID.value;
+        //var note = addBillForm.Note.value;
+        //var amount = addBillForm.Amount.value;
 
         console.log(uID + note + amount);
 
