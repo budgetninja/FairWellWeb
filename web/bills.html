@@ -360,7 +360,7 @@ function addFunc(){
                 //form.submit();
                 alert('worked');
             }, error: function(allBills,error){
-                alert('failed');
+                alert('failed' + error.message);
             }
         });
 }
