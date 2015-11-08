@@ -121,11 +121,11 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                         <a href="user.html">
-                             Account
-                         </a>
-                     </li>
-                     <li>
+                           <a href="user.html">
+                               Account
+                           </a>
+                       </li>
+                       <li>
                         <a href="index.html">
                             Log out
                         </a>
@@ -154,7 +154,7 @@
           <label>Amount:</label>
           <input type="text" class="form-control" id="amnt">
       </div>
-      <button type="submit" onclick="addFunc()" id="submitBtn" class="btn btn-default">Add Bill</button>
+      <button type="submit" id="submitBtn" class="btn btn-default">Add Bill</button>
   </form>
 </div>
 
@@ -179,30 +179,30 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                   <td>1</td>
-                                   <td>Admin 1</td>
-                                   <td>Food</td>
-                                   <td>$100</td>
-                                   <td>10/05/2015</td>
-                                   <td><i class="fa fa-usd"></i></td>
-                               </tr>
-                               <tr>
-                                   <td>2</td>
-                                   <td>Admin 2</td>
-                                   <td>More Food</td>
-                                   <td>$200</td>
-                                   <td>10/11/2015</td>
-                               </tr>
+                                 <td>1</td>
+                                 <td>Admin 1</td>
+                                 <td>Food</td>
+                                 <td>$100</td>
+                                 <td>10/05/2015</td>
+                                 <td><i class="fa fa-usd"></i></td>
+                             </tr>
+                             <tr>
+                                 <td>2</td>
+                                 <td>Admin 2</td>
+                                 <td>More Food</td>
+                                 <td>$200</td>
+                                 <td>10/11/2015</td>
+                             </tr>
 
-                           </tbody>
-                       </table>
+                         </tbody>
+                     </table>
 
-                   </div>
-               </div>
-           </div>  
+                 </div>
+             </div>
+         </div>  
 
 
-           <div class="col-md-12">
+         <div class="col-md-12">
             <div class="card card-plain">
                 <div class="header">
                     <h4 class="title">Resolved Bills</h4>
@@ -210,7 +210,7 @@
                 </div>
                 <div class="content table-responsive table-full-width">
                     <table class="table table-hover">
-                       <thead>
+                     <thead>
                         <th>UserID</th>
                         <th>Name</th>
                         <th>Note</th>
@@ -218,7 +218,7 @@
                         <th>Date Added</th>
                     </thead>
                     <tbody>
-                     <tr>
+                       <tr>
                         <td>1</td>
                         <td>Admin 1</td>
                         <td>Food</td>
@@ -287,12 +287,12 @@
                 </li>
                 <li>
                     <a href="#">
-                     Blog
-                 </a>
-             </li>
-         </ul>
-     </nav>
-     <p class="copyright pull-right">
+                       Blog
+                   </a>
+               </li>
+           </ul>
+       </nav>
+       <p class="copyright pull-right">
         &copy; 2015 Fairwell
     </p>
 </div>
@@ -339,32 +339,31 @@ $("[data-toggle=popover]").popover({
 </script>
 
 <script>
-$(function(){
+$(function(){      
+    $('#addForm').submit(function(event) {
+        event.preventDefault();
+        Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
+
+        var AllBills = Parse.Object.extend("AllBills");
+        var allBills = new AllBills();
         
-        $('#addForm').submit(function(event) {
-            event.preventDefault();
-    Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
+        var uID    =    document.getElementById("usr").value;
+        var note   =    document.getElementById("nte").value;
+        var amount =    document.getElementById("amnt").value;
 
-    var AllBills = Parse.Object.extend("AllBills");
-    var allBills = new AllBills();
-    
-    var uID    =    document.getElementById("usr").value;
-    var note   =    document.getElementById("nte").value;
-    var amount =    document.getElementById("amnt").value;
+        allBills.set("UserID",uID);
+        allBills.set("Note",note);
+        allBills.set("Amount",amount);
 
-    allBills.set("UserID",uID);
-    allBills.set("Note",note);
-    allBills.set("Amount",amount);
-
-    allBills.save(null, {
-        sucess: function(allBills){
+        allBills.save(null, {
+            sucess: function(allBills){
                 //form.submit();
                 alert('worked');
             }, error: function(allBills,error){
                 alert('failed');
             }
         });
-});
+    });
 });
 </script>
 
