@@ -342,14 +342,20 @@ $(function(){
         var AllBills = Parse.Object.extend("AllBills");
         var allBills = new AllBills();
 
-        var uID = document.getElementById("UserID").value;
-        var note = document.getElementById("Note").value;
-        var amount = document.getElementById("Amount").value;
+        //var uID = document.getElementById("UserID").value;
+        //var note = document.getElementById("Note").value;
+        //var amount = document.getElementById("Amount").value;
 
     //alert(uID);
     //console.log(uID);
 
-    allBills.set("UserID","uID");
+    oForm = document.forms[0];
+
+    var uID = oForm.elements["UserID"];
+    var note = oForm.elements["Note"];
+    var amount = oForm.elements["Amount"];
+
+    allBills.set("UserID",uID);
     allBills.set("Note",note);
     allBills.set("Amount",amount);
 
