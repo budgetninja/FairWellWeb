@@ -341,19 +341,19 @@ function addFunc() {
         //var note = document.getElementById("Note").value;
         //var amount = document.getElementById("Amount").value;
 
-    oForm = document.forms[0];
+    //oForm = document.forms[0];
 
-    var uID = oForm.elements["UserID"].value;
-    var note = oForm.elements["Note"].value;
-    var amount = oForm.elements["Amount"];
+    //var uID = oForm.elements["UserID"].value;
+    //var note = oForm.elements["Note"].value;
+    //var amount = oForm.elements["Amount"];
     
-    ///var uID    =    document.getElementById("UserID").value;
-    //var note   =    document.getElementById("Note").value;
-    //var amount =    document.getElementById("Amount").value;
+    var uID    =    document.getElementById("UserID").value;
+    var note   =    document.getElementById("Note").value;
+    var amount =    document.getElementById("Amount").value;
 
-    allBills.set("UserID",uID);
-    allBills.set("Note",note);
-    allBills.set("Amount",amount);
+    //allBills.set("UserID",uID);
+    //allBills.set("Note",note);
+   // allBills.set("Amount",amount);
 
     allBills.save({username: "sauravmo", Note: "walmart", Amount: 100}, {
         sucess: function(allBills){
