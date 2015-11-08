@@ -340,13 +340,13 @@ $("[data-toggle=popover]").popover({
 
 <script>
 $(function(){      
-    $('#addForm').submit(function(event) {
+    $('#submitBtn').click(function(event) {
         event.preventDefault();
         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
 
         var AllBills = Parse.Object.extend("AllBills");
         var allBills = new AllBills();
-        
+
         var uID    =    document.getElementById("usr").value;
         var note   =    document.getElementById("nte").value;
         var amount =    document.getElementById("amnt").value;
