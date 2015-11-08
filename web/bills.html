@@ -147,7 +147,7 @@
           <input type="text" placeholder="UserID" name = "UserID" class="form-control" maxlength="5"> 
           <input type="text" placeholder="Note"   name = "Note" class="form-control" maxlength="5"> 
           <input type="text" placeholder="Amount" name = "Amount" class="form-control" maxlength="5"> 
-          <button type="submit" class="btn btn-primary"> Add Bill »</button>                                  
+          <button type="submit" class="btn btn-primary" id="submitBtn"> Add Bill »</button>                                  
         </div>
       </form>
     </div>
@@ -338,7 +338,7 @@
 
         var ParseObj = Parse.Object.extend('test'); //create local parse object from your Parse class
 
-        $('#addBillForm').submit(function(e) {
+        $('#submitBtn').submit(function(e) {
         //on form submit
             e.preventDefault();
 
