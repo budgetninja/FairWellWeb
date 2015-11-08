@@ -331,32 +331,24 @@ $("[data-toggle=popover]").popover({
 </script>
 
 <script>
-function addFunc() {
-    Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
+$(function(){
+    event.preventDefault();
+    $('#addBillForm').submit(function(event) {
+        Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
 
         var AllBills = Parse.Object.extend("AllBills");
         var allBills = new AllBills();
 
-        //var uID = document.getElementById("UserID").value;
-        //var note = document.getElementById("Note").value;
-        //var amount = document.getElementById("Amount").value;
+        var uID    =    document.getElementById("UserID").value;
+        var note   =    document.getElementById("Note").value;
+        var amount =    document.getElementById("Amount").value;
 
-    //oForm = document.forms[0];
+        allBills.set("UserID",uID);
+        allBills.set("Note",note);
+        allBills.set("Amount",amount);
 
-    //var uID = oForm.elements["UserID"].value;
-    //var note = oForm.elements["Note"].value;
-    //var amount = oForm.elements["Amount"];
-    
-    var uID    =    document.getElementById("UserID").value;
-    var note   =    document.getElementById("Note").value;
-    var amount =    document.getElementById("Amount").value;
-
-    //allBills.set("UserID",uID);
-    //allBills.set("Note",note);
-   // allBills.set("Amount",amount);
-
-    allBills.save({username: "sauravmo", Note: "walmart", Amount: 100}, {
-        sucess: function(allBills){
+        allBills.save(null, {
+            sucess: function(allBills){
                 //form.submit();
                 alert('worked');
             }, error: function(allBills,error){
@@ -364,8 +356,6 @@ function addFunc() {
             }
         });
 
-}
-</script>
-
-
-</html>
+    }
+    </script>
+    </html>
