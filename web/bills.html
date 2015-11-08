@@ -338,7 +338,7 @@
         var allBills = new AllBills();
 
         oForm = document.forms[0];
-        var uID = oForm.elements["UserID"].value;
+        var uID = document.getElementById('UserID');
         var note = oForm.elements["Note"].value;
         var amount = oForm.elements["Amount"].value;
 
@@ -347,6 +347,7 @@
         //var amount = addBillForm.Amount.value;
 
         console.log(uID + note + amount);
+        alert(uID + note + amount);
 
         allBills.set("UserID",uID);
         allBills.set("Note",note);
