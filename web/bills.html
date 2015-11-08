@@ -141,8 +141,8 @@
     <div id="popover-content" class="hide">
       <form class="form-inline" id = "addBillForm" role="form" method="post" action="">
         <div class="form-group">
-          <input type="text" placeholder="UserID" name = "UserID" class="form-control" maxlength="5"> 
-          <input type="text" placeholder="Note"   name = "Note" class="form-control" maxlength="5"> 
+          <input type="text" placeholder="UserID" name = "UserID" class="form-control" maxlength="26"> 
+          <input type="text" placeholder="Note"   name = "Note" class="form-control" maxlength="26"> 
           <input type="text" placeholder="Amount" name = "Amount" class="form-control" maxlength="5"> 
           <button type="submit" onclick = "addFunc()" class="btn btn-primary" id="submitBtn"> Add Bill »</button>                                  
         </div>
@@ -341,10 +341,7 @@
         allBills.set("Note","Food");
         allBills.set("Amount","100");
 
-        var uID = "Mohitbha";
-        var note = "Food";
-
-        allBills.save(uID, note, {
+        allBills.save( null, {
             sucess: function(allBills){
                 alert('worked');
         }, error: function(allBills,error){
