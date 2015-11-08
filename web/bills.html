@@ -333,7 +333,7 @@ $("[data-toggle=popover]").popover({
 <script>
 $(function(){
     event.preventDefault();
-    $('#addBillForm').submit(function(event) {
+    $('#submitBtn').click(function(event) {
         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
 
         var AllBills = Parse.Object.extend("AllBills");
