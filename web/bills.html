@@ -336,15 +336,10 @@
     
         var AllBills = Parse.Object.extend("AllBills");
         var allBills = new AllBills();
-
-        oForm = document.forms[0];
-        var uID = document.getElementById('UserID');
-        var note = oForm.elements["Note"].value;
-        var amount = oForm.elements["Amount"].value;
-
-        //var uID = addBillForm.UserID.value;
-        //var note = addBillForm.Note.value;
-        //var amount = addBillForm.Amount.value;
+        
+        var uID = document.getElementById("UserID").value;
+        var note = document.getElementById("Note").value;
+        var amount = document.getElementById("Amount").value;
 
         console.log(uID + note + amount);
         alert(uID + note + amount);
@@ -356,7 +351,6 @@
         allBills.save( null, {
             sucess: function(allBills){
                 form.submit();
-                addBillForm.submit();
                 alert('worked');
         }, error: function(allBills,error){
             alert('failed');
