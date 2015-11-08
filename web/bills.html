@@ -355,16 +355,14 @@ function addFunc() {
     //var amount = oForm.elements["Amount"];
     
     var uID    =    document.getElementById("UserID").value;
-
-    alert(uID);
     //var note   =    document.getElementById("Note").value;
     //var amount =    document.getElementById("Amount").value;
 
-    allBills.set("UserID",uID);
-    allBills.set("Note",note);
-    allBills.set("Amount",amount);
+    //allBills.set("UserID",uID);
+    //allBills.set("Note",note);
+    //allBills.set("Amount",amount);
 
-    allBills.save(null, {
+    allBills.save({Username: "Sauravmo", Note: "Walmart"}, {
         sucess: function(allBills){
                 //form.submit();
                 alert('worked');
