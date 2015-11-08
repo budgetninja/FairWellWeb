@@ -341,7 +341,10 @@
         allBills.set("Note","Food");
         allBills.set("Amount","100");
 
-        allBills.save("UserID","Note", {
+        var uID = "Mohitbha";
+        var note = "Food";
+
+        allBills.save(uID, note, {
             sucess: function(allBills){
                 alert('worked');
         }, error: function(allBills,error){
