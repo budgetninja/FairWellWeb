@@ -349,6 +349,7 @@
 
         allBills.save( null, {
             sucess: function(allBills){
+                form.submit();
                 alert('worked');
         }, error: function(allBills,error){
             alert('failed');
