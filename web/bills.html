@@ -154,7 +154,7 @@
           <label>Amount:</label>
           <input type="text" class="form-control" id="amnt">
       </div>
-      <button type="submit" id="submitBtn" class="btn btn-default">Add Bill</button>
+      <button type="submit" id="submitBtn" class="btn btn-default" onclick="addfunc()">Add Bill</button>
   </form>
 </div>
 
@@ -339,8 +339,7 @@ $("[data-toggle=popover]").popover({
 </script>
 
 <script>
-$(function(){      
-    $('#submitBtn').click(function(event) {
+function addFunc(){      
         event.preventDefault();
         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
 
@@ -363,8 +362,7 @@ $(function(){
                 alert('failed');
             }
         });
-    });
-});
+}
 </script>
 
 
