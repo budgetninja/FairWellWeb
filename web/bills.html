@@ -341,9 +341,9 @@
         var note = document.getElementById("Note").value;
         var amount = document.getElementById("Amount").value;
 
-        //allBills.set("UserID",uID);
-        //allBills.set("Note",note);
-        //allBills.set("Amount",amount);
+        allBills.set("UserID",uID);
+        allBills.set("Note",note);
+        allBills.set("Amount",amount);
 
         allBills.save( uID, note, amount, {
             sucess: function(allBills){
