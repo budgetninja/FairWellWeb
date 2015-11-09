@@ -362,11 +362,17 @@ function addFunc(event){
         
         alert("All fields are required");
         flag = false;
+        
     }
 
+    if (uID != null || uID != "" || note != null || note != "" || amount != null ) {
+        
+        alert("All fields are required");
+        flag = false;
+    }
 
     if(flag == true) {
-        event.preventDefault();
+        
         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
 
         var AllBills = Parse.Object.extend("AllBills");
