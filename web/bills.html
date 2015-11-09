@@ -138,6 +138,10 @@
   Add Bill
 </button>
 
+<button class="btn btn-success" type="button" onclick="getData()" style="margin-bottom: 20px">
+  Get Data
+</button>
+
 <div class="collapse" id="collapseExample">
   <div class="well">
     
@@ -373,6 +377,30 @@ function addFunc(event){
         });
     }
 }
+
+function getData() {
+    Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
+
+    var AllBills1 = Parse.Object.extend("AllBills");
+    var allBills1 = new AllBills1();
+    var query = new Parse.Query(AllBills1);
+
+    query.get("xWMyZ4YEGZ", {
+      success: function(allBills1) {
+        // The object was retrieved successfully.
+      },
+      error: function(object, error) {
+        // The object was not retrieved successfully.
+        // error is a Parse.Error with an error code and message.
+      }
+    });
+    
+    var a = allBills1.get("score");
+    var b = allBills1.get("playerName");
+    var c = allBills1.get("cheatMode");
+
+    console.log(a + " " + b + " " + c );
+    }
 </script>
 
 </html>
