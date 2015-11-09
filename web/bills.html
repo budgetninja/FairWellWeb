@@ -36,8 +36,9 @@
 
     <style>     
     h2{margin-left: 20px}     
-    button{margin-left: 37px; margin-top: 20px; margin-bottom: 20px;}
+    button{margin-left: 37px; margin-top: 20px;}
     .btn-success{ color:  "lightgreen"; background-color: "white";} 
+    #popover{margin-bottom: 20px;}
 
     </style>  
 
@@ -135,29 +136,6 @@
             </div>
         </div>
     </nav>
-
-    <a data-placement="bottom" data-toggle="popover" data-title="Add a Bill" data-container="body" type="button" data-html="true" href="#" id="login"><button id = "popover" type="button" class="btn btn-success"> Add Bills</button></a>
-
-
-    <div id="popover-content" class="hide">
-      <h2>- Add a Bill -</h2>
-      <p>Enter UserID, Note & Amount</p>
-      <form role="form" id = "addForm">
-        <div class="form-group">
-          <label>UserID:</label>
-          <input type='text' class="form-control" id="usr" name = "usr">
-      </div>
-      <div class="form-group">
-          <label>Note:</label>
-          <input type='text' class="form-control" id="nte" name = "nte">
-      </div>
-      <div class="form-group">
-          <label>Amount:</label>
-          <input type='text' class="form-control" id="amnt" name = "amnt">
-      </div>
-      <button type="submit" id="submitBtn" class="btn btn-default" onclick="addFunc()">Add Bill</button>
-  </form>
-</div>
 
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
   Button with data-target
