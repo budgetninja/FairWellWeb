@@ -362,13 +362,12 @@ function addFunc(event){
         
         alert("All fields are required");
         flag = false;
-        
+
     }
 
     if (uID != null || uID != "" || note != null || note != "" || amount != null ) {
         
-        alert("All fields are required");
-        flag = false;
+        flag = true;
     }
 
     if(flag == true) {
