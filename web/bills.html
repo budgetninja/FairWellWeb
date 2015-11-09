@@ -35,10 +35,22 @@
 
 
     <style>     
-    h2{margin-left: 20px}     
-    button{margin-left: 37px; margin-top: 20px;}
-    .btn-success{ color:  "lightgreen"; background-color: "white";} 
-    #popover{margin-bottom: 20px;}
+        h2 {
+            margin-left: 20px
+        }     
+        button {
+            margin-left: 37px; 
+            margin-top: 20px;
+        }
+        
+        .btn-success{ 
+            color:  "lightgreen"; 
+            background-color: "white";
+        } 
+        
+        #popover {
+            margin-bottom: 20px;
+        }
 
     </style>  
 
@@ -49,9 +61,6 @@
 
     <div class="wrapper">
         <div class="sidebar" data-color="olive" data-image="assets/img/sidebar-5.jpg">  
-
-            <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
-
 
             <div class="sidebar-wrapper">
                 <div class="logo">
@@ -334,6 +343,7 @@
 <script src="assets/js/demo.js"></script>
 
 <script type="text/javascript">
+
 $("[data-toggle=popover]").popover({
     html: true, 
     content: function() {
@@ -341,9 +351,6 @@ $("[data-toggle=popover]").popover({
   }
 });
 
-</script>
-
-<script>
 function addFunc(){      
         event.preventDefault();
         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
@@ -370,6 +377,5 @@ function addFunc(){
         });
 }
 </script>
-
 
 </html>
