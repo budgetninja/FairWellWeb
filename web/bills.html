@@ -135,7 +135,7 @@
         </div>
     </nav>
 
-    <button id = "popover" type="button" class="btn btn-success"> <a data-placement="bottom" data-toggle="popover" data-title="Add a Bill" data-container="body" type="button" data-html="true" href="#" id="login">Add Bills</a></button>
+    <a data-placement="bottom" data-toggle="popover" data-title="Add a Bill" data-container="body" type="button" data-html="true" href="#" id="login"><button id = "popover" type="button" class="btn btn-success"> Add Bills</button></a>
 
 
     <div id="popover-content" class="hide">
@@ -351,7 +351,7 @@ function addFunc(){
         var amount =    document.getElementById("amnt").value;
 
         allBills.set("UserID", "Sauravmo");
-        allBills.set("Note", document.getElementById("nte"));
+        allBills.set("Note", document.getElementById("nte").val);
         allBills.set("Amount", "1000");
 
         allBills.save(null, {
