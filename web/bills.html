@@ -144,15 +144,15 @@
       <form role="form" id = "addForm">
         <div class="form-group">
           <label>UserID:</label>
-          <input type="text" class="form-control" id="usr" name = "usr">
+          <input type='text' class="form-control" id="usr" name = "usr">
       </div>
       <div class="form-group">
           <label>Note:</label>
-          <input type="text" class="form-control" id="nte" name = "nte">
+          <input type='text' class="form-control" id="nte" name = "nte">
       </div>
       <div class="form-group">
           <label>Amount:</label>
-          <input type="text" class="form-control" id="amnt" name = "amnt">
+          <input type='text' class="form-control" id="amnt" name = "amnt">
       </div>
       <button type="submit" id="submitBtn" class="btn btn-default" onclick="addFunc()">Add Bill</button>
   </form>
@@ -354,7 +354,7 @@ function addFunc(){
         console.log(document.getElementById("usr").value);
 
         allBills.set("UserID", "Sauravmo");
-        allBills.set("Note", document.getElementById("nte").value);
+        allBills.set("Note", note);
         allBills.set("Amount", "1000");
 
         allBills.save(null, {
