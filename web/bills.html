@@ -372,14 +372,14 @@ function addFunc(){
         var AllBills = Parse.Object.extend("AllBills");
         var allBills = new AllBills();
 
-        var uID    =    document.getElementById("usr").value;
-        var note   =    document.getElementById("nte").value;
-        var amount =    document.getElementById("amnt").value;
+        var uID    =    document.getElementById("usr1").value;
+        var note   =    document.getElementById("nte1").value;
+        var amount =    document.getElementById("amnt1").value;
 
         console.log(uID);
         console.log(document.getElementById("usr").value);
 
-        allBills.set("UserID", "Sauravmo");
+        allBills.set("UserID", uID);
         allBills.set("Note", note);
         allBills.set("Amount", "1000");
 
