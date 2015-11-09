@@ -353,15 +353,23 @@ $("[data-toggle=popover]").popover({
 });
 
 function addFunc(){      
+    var flag = true;
+    var uID    =    document.getElementById("usr1").value;
+    var note   =    document.getElementById("nte1").value;
+    var amount =    document.getElementById("amnt1").value;
+    if (uID == null || uID == "" || note == null || note == "" || amount == null || amount == "") {
+        alert("All fields are required");
+        flag = false;
+        return false;
+    }
+
+
+    if(flag == true) {
         event.preventDefault();
         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
 
         var AllBills = Parse.Object.extend("AllBills");
         var allBills = new AllBills();
-
-        var uID    =    document.getElementById("usr1").value;
-        var note   =    document.getElementById("nte1").value;
-        var amount =    document.getElementById("amnt1").value;
 
         allBills.set("UserID", uID);
         allBills.set("Note", note);
@@ -370,12 +378,12 @@ function addFunc(){
         allBills.save(null, {
             sucess: function(allBills){
                 window.location.replace("bills.html");
-                //form.submit();
                 alert('worked');
             }, error: function(allBills,error){
                 alert('failed' + error.message);
             }
         });
+    }
 }
 </script>
 
