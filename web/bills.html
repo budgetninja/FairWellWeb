@@ -351,7 +351,7 @@ function addFunc(){
         var amount =    document.getElementById("amnt").value;
 
         allBills.set("UserID", "Sauravmo");
-        allBills.set("Note", "Hello");
+        allBills.set("Note", document.getElementById("nte").value);
         allBills.set("Amount", "1000");
 
         allBills.save(null, {
