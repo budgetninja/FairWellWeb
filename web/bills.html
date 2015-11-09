@@ -360,6 +360,7 @@ function addFunc(event){
         allBills.set("UserID", uID);
         allBills.set("Note", note);
         allBills.set("Amount", amount);
+        allBills.set("Resolved", false);
 
         allBills.save(null, {
             sucess: function(allBills){
