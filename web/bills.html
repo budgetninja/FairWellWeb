@@ -340,7 +340,7 @@ $("[data-toggle=popover]").popover({
 
 <script>
 function addFunc(){      
-        //event.preventDefault();
+        event.preventDefault();
         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
 
         var AllBills = Parse.Object.extend("AllBills");
@@ -351,7 +351,7 @@ function addFunc(){
         var amount =    document.getElementById("amnt").value;
 
         allBills.set("UserID", "Sauravmo");
-        allBills.set("Note", document.getElementById("nte").value);
+        allBills.set("Note", document.getElementById("nte"));
         allBills.set("Amount", "1000");
 
         allBills.save(null, {
