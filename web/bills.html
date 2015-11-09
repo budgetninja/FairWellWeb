@@ -359,8 +359,9 @@ function addFunc(event){
     var note   =    document.getElementById("nte1").value;
     var amount =    document.getElementById("amnt1").value;
     if (uID == null || uID == "" || note == null || note == "" || amount == null || amount == "") {
-        event.preventDefault();
+        
         alert("All fields are required");
+        event.preventDefault();
         flag = false;
     }
 
