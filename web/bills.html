@@ -10,29 +10,19 @@
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     
-    
-    <!-- Bootstrap core CSS     -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Animation library for notifications   -->
     <link href="assets/css/animate.min.css" rel="stylesheet"/>
     
-    <!--  Light Bootstrap Table core CSS    -->
     <link href="assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
 
-    <!-- Favicon Support-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     
-    
-    <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="assets/css/demo.css" rel="stylesheet" />
     
-
-    <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
-
 
     <style>     
         h2 {
@@ -51,10 +41,7 @@
         #popover {
             margin-bottom: 20px;
         }
-
     </style>  
-
-
 
 </head>
 <body> 
@@ -146,33 +133,33 @@
         </div>
     </nav>
 
-<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin-bottom: 20px">
+<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" 
+        aria-expanded="false" aria-controls="collapseExample" style="margin-bottom: 20px">
   Add Bill
 </button>
 
 <div class="collapse" id="collapseExample">
   <div class="well">
     
-    <form role="form">
-  <div class="form-group" style="margin-left: 20px;">
-    <label for="user">UserID:</label>
-    <input type="text" class="form-control" id="usr1">
-  </div>
+   <form role="form">
+    <div class="form-group" style="margin-left: 20px;">
+        <label for="user">UserID:</label>
+        <input type="text" class="form-control" id="usr1">
+    </div>
 
     <div class="form-group" style="margin-left: 20px;">
-    <label for="note">Note:</label>
-    <input type="text" class="form-control" id="nte1">
-  </div>
-  <div class="form-group" style="margin-left: 20px;">
-    <label for="amnt">Amount:</label>
-    <input type="number" class="form-control" id="amnt1">
-  </div>
-  <button type="submit" class="btn btn-success" onclick = "addFunc()" style="margin-left: 20px;">Submit</button>
-</form>
+        <label for="note">Note:</label>
+        <input type="text" class="form-control" id="nte1">
+    </div>
+    <div class="form-group" style="margin-left: 20px;">
+        <label for="amnt">Amount:</label>
+        <input type="number" class="form-control" id="amnt1">
+    </div>
+    <button type="submit" class="btn btn-success" onclick = "addFunc()" style="margin-left: 20px;">Submit</button>
+   </form>
 
   </div>
 </div>
-
 
 <div class="content">
     <div class="container-fluid">
@@ -275,8 +262,6 @@
         </div>
     </div>
 </div> 
-
-
 </div>                    
 </div>
 </div>
@@ -313,10 +298,8 @@
 </div>
 </footer>
 
-
 </div>   
 </div>
-
 
 </body>
 
@@ -349,15 +332,17 @@ $("[data-toggle=popover]").popover({
     html: true, 
     content: function() {
       return $('#popover-content').html();
-  }
+    }
 });
 
 function addFunc(event){      
+    
     var flag = true;
 
     var uID    =    document.getElementById("usr1").value;
     var note   =    document.getElementById("nte1").value;
     var amount =    document.getElementById("amnt1").value;
+    
     if (uID == null || uID == "" || note == null || note == "" || amount == null || amount == "") {
         
         alert("All fields are required");
