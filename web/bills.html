@@ -376,12 +376,9 @@ function addFunc(){
         var note   =    document.getElementById("nte1").value;
         var amount =    document.getElementById("amnt1").value;
 
-        console.log(uID);
-        console.log(document.getElementById("usr").value);
-
         allBills.set("UserID", uID);
         allBills.set("Note", note);
-        allBills.set("Amount", "1000");
+        allBills.set("Amount", amount);
 
         allBills.save(null, {
             sucess: function(allBills){
