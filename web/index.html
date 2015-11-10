@@ -174,7 +174,9 @@
 
             }, error: function(user,error){
                 alert(error.message);
-                console.error('ERROR : ' + error.text + error.status)
+                alert(error.text);
+                console.error('ERROR : ' + error.text + error.status);
+
             }
         });
        });
