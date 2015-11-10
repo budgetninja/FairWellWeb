@@ -183,22 +183,16 @@
                                 <th>Amount</th>
                                 <th>Date Added</th>
                             </thead>
-                            <tbody>
-                                <tr>
-                                 <td>1</td>
-                                 <td>Admin 1</td>
-                                 <td>Food</td>
-                                 <td>$100</td>
-                                 <td>10/05/2015</td>
-                             </tr>
-                             <tr>
+                            <tbody id = "tbody">
+                            
+                             <!-- <tr>
                                  <td>2</td>
                                  <td>Admin 2</td>
                                  <td>More Food</td>
                                  <td>$200</td>
                                  <td>10/11/2015</td>
                              </tr>
-
+ -->
                          </tbody>
                      </table>
 
@@ -379,7 +373,27 @@ function getData() {
         // Do something with the returned Parse.Object values
         for (var i = 0; i < results.length; i++) {
           var object = results[i];
-          console.log(object.id + ' - ' + object.get('UserID') + ' - ' + object.get('Note') + ' - ' + object.get('Amount') );
+          var oid = object.id;
+          var oUID = object.get('UserID');
+          var oNote = object.get('Note');
+          var oAmount = object.get('Amount');
+            
+            
+        var tr, td;
+        tbody = document.getElementById(tbody);
+        // loop through data source
+            tr = tbody.insertRow(tbody.rows.length);
+            td = tr.insertCell(tr.cells.length);
+            td.setAttribute("align", "center");
+            td.innerHTML = oid;
+            td = tr.insertCell(tr.cells.length);
+            td.innerHTML = oUID;
+            td = tr.insertCell(tr.cells.length);
+            td.innerHTML = oNote;
+            td = tr.insertCell(tr.cells.length);
+            td.innerHTML = oAmount;
+            td = tr.insertCell(tr.cells.length);
+          // console.log(object.get('UserID') + ' - ' + object.get('Note') + ' - ' + object.get('Amount') );
         }
       },
       error: function(error) {
