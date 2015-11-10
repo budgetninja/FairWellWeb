@@ -329,8 +329,19 @@ function resolveFunc(){
         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
         var resolveBills = Parse.Object.extend("AllBills");
         var query2 = new Parse.Query(resolveBills);
+        query2.equalTo("UserID" , uID);
+        query2.equalTo("Amount" , amount);
+        
+        query.find({
+            success : function(results) {
+                results.set("Resolved", true);
+                results.save();
+            }
+        });
+        
+            
         console.log(uID + " " + amount);
-
+    
     }
 }
 
