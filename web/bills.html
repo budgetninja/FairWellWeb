@@ -377,11 +377,9 @@ function getData() {
           var oNote = object.get('Note');
           var oAmount = object.get('Amount');
           var oC = String(object.get('createdAt'));
-          var oCreated = oC.substr(3,15);
-            
-            var table = document.getElementById("tablebody");
-
-            var row = table.insertRow(i);
+          var oCreated = oC.substr(3,12);
+          var table = document.getElementById("tablebody");
+          var row = table.insertRow(i);
 
             // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
             var cell1 = row.insertCell(0);
