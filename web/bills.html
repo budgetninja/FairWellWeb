@@ -144,7 +144,7 @@
 </button>
 
 
-<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#resolveForm" aria-expanded="true" aria-controls="resolveForm" style="margin-bottom: 20px">
+<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#resolveForm" aria-expanded="false" aria-controls="resolveForm" style="margin-bottom: 20px">
   Resolve Bill
 </button>
 
@@ -362,6 +362,9 @@ $("[data-toggle=popover]").popover({
     }
 });
 
+Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
+
+
 function addFunc(event){      
     
     var flag = true;
@@ -379,8 +382,7 @@ function addFunc(event){
 
     if(flag == true) {
         
-        Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
-
+        
         var AllBills = Parse.Object.extend("AllBills");
         var allBills = new AllBills();
 
@@ -402,7 +404,6 @@ function addFunc(event){
 }
 
 function getData() {
-    Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
 
     var AllBills1 = Parse.Object.extend("AllBills");
     var allBills1 = new AllBills1();
@@ -410,11 +411,10 @@ function getData() {
 
     query.get("rqWPwN9Aq9", {
       success: function(allBills1) {
-        // The object was retrieved successfully.
+        alert("S");
       },
       error: function(object, error) {
-        // The object was not retrieved successfully.
-        // error is a Parse.Error with an error code and message.
+        alert("Not S");
       }
     });
     
@@ -422,7 +422,7 @@ function getData() {
     var b = allBills1.get("Note");
     var c = allBills1.get("Amount");
 
-    console.log(a + " " + b + " " + c );
+    console.log(a);
     }
 </script>
 
