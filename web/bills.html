@@ -377,6 +377,7 @@ function getData() {
           var oNote = object.get('Note');
           var oAmount = object.get('Amount');
           var oCreated = object.get('createdAt');
+              oCreated = oCreated.substr(3,15);
             
             var table = document.getElementById("tablebody");
 
