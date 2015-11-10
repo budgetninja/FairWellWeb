@@ -173,6 +173,7 @@
                 location.reload();
 
             }, error: function(user,error){
+                alert(error.message);
                 console.error('ERROR : ' + error.text + error.status)
             }
         });
