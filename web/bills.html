@@ -372,14 +372,14 @@ function getData() {
     Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
     var GameScore = Parse.Object.extend("AllBills");
     var query = new Parse.Query(GameScore);
-    query.equalTo("UserID", "Mohit");
+    query.equalTo("Resolved", false);
     query.find({
       success: function(results) {
         alert("Successfully retrieved " + results.length + " scores.");
         // Do something with the returned Parse.Object values
         for (var i = 0; i < results.length; i++) {
           var object = results[i];
-          alert(object.id + ' - ' + object.get('UserID'));
+          console.log(object.id + ' - ' + object.get('UserID'));
         }
       },
       error: function(error) {
