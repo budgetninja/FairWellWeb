@@ -366,11 +366,11 @@ function getData() {
 
         for (var i = 0; i < results1.length; i++) {
           var object1 = results1[i];
-          var oid1 = object.id;
-          var oUID1 = object.get('UserID');
-          var oNote1 = object.get('Note');
-          var oAmount1 = object.get('Amount');
-          var oC1 = String(object.get('createdAt'));
+          var oid1 = object1.id;
+          var oUID1 = object1.get('UserID');
+          var oNote1 = object1.get('Note');
+          var oAmount1 = object1.get('Amount');
+          var oC1 = String(object1.get('createdAt'));
           var oCreated1 = oC1.substr(3,12);
           var table = document.getElementById("resolvedTable");
           var row = table.insertRow(i);
@@ -380,10 +380,10 @@ function getData() {
             var cell3 = row.insertCell(2);
             var cell4 = row.insertCell(3);
 
-            cell1.innerHTML = oUID;
-            cell2.innerHTML = oNote;
-            cell3.innerHTML = oAmount;
-            cell4.innerHTML = oCreated;
+            cell1.innerHTML = oUID1;
+            cell2.innerHTML = oNote1;
+            cell3.innerHTML = oAmount1;
+            cell4.innerHTML = oCreated1;
         }
       },
       error: function(error) {
