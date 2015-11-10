@@ -336,7 +336,11 @@ function resolveFunc(){
             success : function(results) {
                 results.set("Resolved", true);
                 results.save();
-            }
+            },
+            error: function(error) {
+        alert("Error: " + error.code + " " + error.message);
+      }
+            
         });
 
     }
