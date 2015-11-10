@@ -137,11 +137,10 @@
         aria-expanded="false" aria-controls="collapseExample" style="margin-bottom: 20px">
   Add Bill
 </button>
-<!-- 
-<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseResolve" 
-        aria-expanded="false" aria-controls="collapseResolve" style="margin-bottom: 20px">
+
+ <button class="btn btn-success" type="button" style="margin-bottom: 20px">
   Resolve
-</button> -->
+</button>
 
 <div class="collapse" id="collapseExample">
   <div class="well">
@@ -165,27 +164,6 @@
 
   </div>
 </div>
-
-
-<!-- 
-<div class="collapse" id="collapseResolve">
-  <div class="well">
-    
-   <form role="form">
-    <div class="form-group" style="margin-left: 20px;">
-        <label for="userResolve">UserID:</label>
-        <input type="text" class="form-control" id="usrR">
-    </div>
-
-    <div class="form-group" style="margin-left: 20px;">
-        <label for="amnt">Amount:</label>
-        <input type="number" class="form-control" id="amntR">
-    </div>
-    <button type="submit" class="btn btn-success" id = "sub" onclick = "resolveFunc()" style="margin-left: 20px;">Submit</button>
-   </form>
-
-  </div>
-</div> -->
 
 <div class="content">
     <div class="container-fluid">
@@ -313,39 +291,38 @@ $("[data-toggle=popover]").popover({
       return $('#popover-content').html();
     }
 });
-
-// function resolveFunc(){      
+function addFunc(event){      
     
-//     var flag = true;
-//     var uID    =    document.getElementById("usrR").value;
-//     var amount =    document.getElementById("amntR").value;
+    var flag = true;
+    var uID    =    document.getElementById("usr1").value;
+    var note   =    document.getElementById("nte1").value;
+    var amount =    document.getElementById("amnt1").value;
     
-//     if (uID == null || uID == "" || amount == null || amount == "") {
-//         alert("All fields are required");
-//         flag = false;
-//     }
-//     if(flag == true) {
+    if (uID == null || uID == "" || note == null || note == "" || amount == null || amount == "") {
         
-//         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
-//         var resolveBills = Parse.Object.extend("AllBills");
-//         var query2 = new Parse.Query(resolveBills);
-//         query2.equalTo("UserID" , uID);
-//         // query2.equalTo("Amount" , amount);
+        alert("All fields are required");
+        flag = false;
+    }
+    if(flag == true) {
         
-//         query2.find({
-//             success : function(results) {
-//                 results.set("Resolved", true);
-//                 results.save();
-//             },
-//             error: function(error) {
-//         alert("Error: " + error.code + " " + error.message);
-//       }
-            
-//         });
-
-//     }
-// }
-
+        Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
+        var AllBills = Parse.Object.extend("AllBills");
+        var allBills = new AllBills();
+        allBills.set("UserID", uID);
+        allBills.set("Note", note);
+        allBills.set("Amount", amount);
+        allBills.set("Resolved", false);
+        allBills.save(null, {
+            sucess: function(allBills){
+                window.location.replace("bills.html");
+                alert('worked');
+            }, error: function(allBills,error){
+                //alert('failed' + error.message);
+                alert("success!");
+            }
+        });
+    }
+}
 function getData() {
     Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
     var billData = Parse.Object.extend("AllBills");
@@ -354,7 +331,6 @@ function getData() {
     query.equalTo("Resolved", false);
     query.find({
       success: function(results) {
-
         for (var i = 0; i < results.length; i++) {
           var object = results[i];
           var oid = object.id;
@@ -365,12 +341,10 @@ function getData() {
           var oCreated = oC.substr(3,12);
           var table = document.getElementById("tablebody");
           var row = table.insertRow(i);
-
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);
             var cell4 = row.insertCell(3);
-
             cell1.innerHTML = oUID;
             cell2.innerHTML = oNote;
             cell3.innerHTML = oAmount;
@@ -385,7 +359,6 @@ function getData() {
     query1.equalTo("Resolved", true);
     query1.find({
       success: function(results1) {
-
         for (var i = 0; i < results1.length; i++) {
           var object1 = results1[i];
           var oid1 = object1.id;
@@ -396,12 +369,10 @@ function getData() {
           var oCreated1 = oC1.substr(3,12);
           var table = document.getElementById("resolvedTable");
           var row = table.insertRow(i);
-
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);
             var cell4 = row.insertCell(3);
-
             cell1.innerHTML = oUID1;
             cell2.innerHTML = oNote1;
             cell3.innerHTML = oAmount1;
@@ -412,7 +383,6 @@ function getData() {
         alert("Error: " + error.code + " " + error.message);
       }
     });
-
     }
 </script>
 
