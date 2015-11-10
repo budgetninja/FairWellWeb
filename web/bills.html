@@ -313,36 +313,24 @@ $("[data-toggle=popover]").popover({
       return $('#popover-content').html();
     }
 });
-function addFunc(event){      
+
+function resolveFunc(event){      
     
     var flag = true;
-    var uID    =    document.getElementById("usr1").value;
-    var note   =    document.getElementById("nte1").value;
-    var amount =    document.getElementById("amnt1").value;
+    var uID    =    document.getElementById("usrR").value;
+    var amount =    document.getElementById("amntR").value;
     
-    if (uID == null || uID == "" || note == null || note == "" || amount == null || amount == "") {
-        
+    if (uID == null || uID == "" || amount == null || amount == "") {
         alert("All fields are required");
         flag = false;
     }
     if(flag == true) {
         
         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
-        var AllBills = Parse.Object.extend("AllBills");
-        var allBills = new AllBills();
-        allBills.set("UserID", uID);
-        allBills.set("Note", note);
-        allBills.set("Amount", amount);
-        allBills.set("Resolved", false);
-        allBills.save(null, {
-            sucess: function(allBills){
-                window.location.replace("bills.html");
-                alert('worked');
-            }, error: function(allBills,error){
-                //alert('failed' + error.message);
-                alert("success!");
-            }
-        });
+        var resolveBills = Parse.Object.extend("AllBills");
+        var query2 = new Parse.Query(resolveBills);
+        console.log(uID + " " + amount);
+
     }
 }
 
