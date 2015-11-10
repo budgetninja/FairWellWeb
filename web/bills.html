@@ -351,20 +351,7 @@ function getData() {
             cell3.innerHTML = oAmount;
             cell4.innerHTML = oCreated;
             cell5.innerHTML = '<input id="resolveButton" class="btn btn-success" style="padding-top:4px;padding-bottom:4px;"    type="button" value="Resolve" />';  
-
-            document.getElementById("resolveButton").onclick = function() { 
-              console.log(oid);
-              var query2 = new Parse.Query(billData);
-              query2.equalTo("UserID",oid);
-              query2.find({
-                  success: function(results1) {
-                        results1.set("Resolved", true);
-                        results.save(null); 
-                  }
-              });
-
-
-          }
+            document.getElementById("resolveButton").onclick = function() { resolveFunc(oid)}; 
       },
       error: function(error) {
         alert("Error: " + error.code + " " + error.message);
@@ -402,7 +389,6 @@ function getData() {
 
     function resolveFunc(oid){
         console.log(oid);
-
     }
 </script>
 
