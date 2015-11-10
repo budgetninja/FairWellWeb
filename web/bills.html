@@ -138,10 +138,6 @@
   Add Bill
 </button>
 
- <button class="btn btn-success" type="button" style="margin-bottom: 20px">
-  Resolve
-</button>
-
 <div class="collapse" id="collapseExample">
   <div class="well">
     
@@ -160,6 +156,30 @@
         <input type="number" class="form-control" id="amnt1">
     </div>
     <button type="submit" class="btn btn-success" onclick = "addFunc()" style="margin-left: 20px;">Submit</button>
+   </form>
+
+  </div>
+</div>
+
+<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseResolve" 
+        aria-expanded="false" aria-controls="collapseResolve" style="margin-bottom: 20px">
+  Resolve
+</button>
+
+<div class="collapse" id="collapseResolve">
+  <div class="well">
+    
+   <form role="form">
+    <div class="form-group" style="margin-left: 20px;">
+        <label for="userResolve">UserID:</label>
+        <input type="text" class="form-control" id="usrR">
+    </div>
+
+    <div class="form-group" style="margin-left: 20px;">
+        <label for="amnt">Amount:</label>
+        <input type="number" class="form-control" id="amntR">
+    </div>
+    <button type="submit" class="btn btn-success" onclick = "resolveFunc()" style="margin-left: 20px;">Submit</button>
    </form>
 
   </div>
