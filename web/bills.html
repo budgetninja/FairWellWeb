@@ -177,10 +177,11 @@
                     <div class="content table-responsive table-full-width">
                         <table class="table table-hover table-striped">
                             <thead>
-                                <th>UserID</th>
                                 <th>Name</th>
                                 <th>Note</th>
                                 <th>Amount</th>
+                                <th>Date Added</th>
+
 
                             </thead>
                             <tbody id = "tablebody">
@@ -375,6 +376,7 @@ function getData() {
           var oUID = object.get('UserID');
           var oNote = object.get('Note');
           var oAmount = object.get('Amount');
+          var oCreated = object.get('createdAt');
             
             var table = document.getElementById("tablebody");
 
@@ -385,19 +387,13 @@ function getData() {
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);
             var cell4 = row.insertCell(3);
-            var cell5 = row.insertCell(4);
 
 
             // Add some text to the new cells:
-            cell1.innerHTML = oid;
-            cell2.innerHTML = oUID;
-            cell3.innerHTML = oNote;
-            cell4.innerHTML = oAmount;
-            cell5.innerHTML = "NEW CELL1";
-
-
-
-
+            cell1.innerHTML = oUID;
+            cell2.innerHTML = oNote;
+            cell3.innerHTML = oAmount;
+            cell4.innerHTML = oCreated;
           // console.log(object.get('UserID') + ' - ' + object.get('Note') + ' - ' + object.get('Amount') );
         }
       },
