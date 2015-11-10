@@ -354,9 +354,13 @@ function getData() {
 
             document.getElementById("resolveButton").onclick = function() {
               console.log(oid)};
-              // var query2 = new Parse.Query(billData);
-              // query2.equalTo("UserID",)
-              // query2.find({});
+              var query2 = new Parse.Query(billData);
+              query2.equalTo("UserID",oid);
+              query2.find({
+                  success: function(results1) {
+                        results1.set("Resolved", true);
+                        results.save(null);                      
+              });
 
 
           }
