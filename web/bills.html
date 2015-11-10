@@ -372,22 +372,30 @@ function getData() {
     Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
     var AllBills1 = Parse.Object.extend("AllBills");
     var allBills1 = new AllBills1();
-    var query = new Parse.Query(AllBills1);
-    query.get("rqWPwN9Aq9", {
-      success: function(allBills1) {
-        // The object was retrieved successfully.
-      },
-      error: function(object, error) {
-        // The object was not retrieved successfully.
-        // error is a Parse.Error with an error code and message.
-      }
-    });
+    // var query = new Parse.Query(AllBills1);
+    // query.get("3n94s4zpfN", {
+    //   success: function(allBills1) {
+    //     // The object was retrieved successfully.
+    //   },
+    //   error: function(object, error) {
+    //     // The object was not retrieved successfully.
+    //     // error is a Parse.Error with an error code and message.
+    //   }
+    // });
     
-    var a = allBills1.get("UserID");
-    var b = allBills1.get("Note");
-    var c = allBills1.get("Amount");
-    console.log(a + " " + b + " " + c );
-    console.log(query);
+    // var a = allBills1.get("UserID");
+    // var b = allBills1.get("Note");
+    // var c = allBills1.get("Amount");
+    // console.log(a + " " + b + " " + c );
+    // console.log(query);
+    allBills1.fetch({
+    success: function(allBills1) {
+        console.log(allBills1);
+    },
+    error: function(allBills1, error) {
+        console.log(error);
+    }
+});
     }
 </script>
 
