@@ -31,7 +31,6 @@ function addFunc(event){
                 window.location.replace("bills.html");
                 alert('worked');
             }, error: function(allBills,error){
-                //alert('failed' + error.message);
                 alert("success!");
             }
         });
@@ -108,7 +107,6 @@ function getData() {
         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
         var billData = Parse.Object.extend("AllBills");
         var query = new Parse.Query(billData);
-        // query.equalTo("objectId", oid);
         query.get(oid , {
             success: function(results) {
                 results.set("Resolved", true);
