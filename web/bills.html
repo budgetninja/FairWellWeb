@@ -327,6 +327,7 @@ function getData() {
     var billData = Parse.Object.extend("AllBills");
     var query = new Parse.Query(billData);
     var query1 = new Parse.Query(billData);
+
     query.equalTo("Resolved", false);
     query.find({
       success: function(results) {
@@ -353,7 +354,10 @@ function getData() {
 
             document.getElementById("resolveButton").onclick = function() {
               console.log(oid)};
-              
+              var query2 = new Parse.Query(billData);
+              query2.equalTo("UserID",)
+              query2.find({});
+
 
           }
       },
