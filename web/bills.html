@@ -330,7 +330,7 @@ function resolveFunc(){
         var resolveBills = Parse.Object.extend("AllBills");
         var query2 = new Parse.Query(resolveBills);
         query2.equalTo("UserID" , uID);
-        query2.equalTo("Amount" , amount);
+        // query2.equalTo("Amount" , amount);
         
         query2.find({
             success : function(results) {
@@ -338,10 +338,7 @@ function resolveFunc(){
                 results.save();
             }
         });
-        
-            
-        console.log(uID + " " + amount);
-    
+
     }
 }
 
