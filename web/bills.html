@@ -332,7 +332,7 @@ function getData() {
       success: function(results) {
         for (var i = 0; i < results.length; i++) {
           var object = results[i];
-          var oid = object.id;
+          var oid = String(object.id);
           var oUID = object.get('UserID');
           var oNote = object.get('Note');
           var oAmount = object.get('Amount');
@@ -349,7 +349,11 @@ function getData() {
             cell2.innerHTML = oNote;
             cell3.innerHTML = oAmount;
             cell4.innerHTML = oCreated;
-            cell5.innerHTML = '<input id="resolveButton" class="btn btn-success" style="padding-top:4px;padding-bottom:4px;"    type="button" value="Resolve" />';        
+            cell5.innerHTML = '<input id="resolveButton" class="btn btn-success" style="padding-top:4px;padding-bottom:4px;"    type="button" value="Resolve" />';  
+
+            getElementById("resolveButton").onclick = function() {resolveFunc(oid)};
+
+
           }
       },
       error: function(error) {
@@ -386,8 +390,8 @@ function getData() {
     });
     }
 
-    function resolveFunc(){
-        console.log(arguments[0]);
+    function resolveFunc(oid){
+        console.log(oid);
     }
 </script>
 
