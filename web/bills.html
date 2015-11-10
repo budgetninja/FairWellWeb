@@ -44,7 +44,7 @@
     </style>  
 
 </head>
-<body> 
+<body onload="getData();"> 
 
     <div class="wrapper">
         <div class="sidebar" data-color="olive" data-image="assets/img/sidebar-5.jpg">  
@@ -138,9 +138,9 @@
   Add Bill
 </button>
 
-<button class="btn btn-success" type="button" onclick="getData()" style="margin-bottom: 20px">
+<!-- <button class="btn btn-success" type="button" onclick="getData()" style="margin-bottom: 20px">
   Get Data
-</button>
+</button> -->
 
 <div class="collapse" id="collapseExample">
   <div class="well">
@@ -361,6 +361,7 @@ function addFunc(event){
         });
     }
 }
+
 function getData() {
     Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
     var billData = Parse.Object.extend("AllBills");
