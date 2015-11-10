@@ -379,7 +379,7 @@ function getData() {
         // Do something with the returned Parse.Object values
         for (var i = 0; i < results.length; i++) {
           var object = results[i];
-          console.log(object.id + ' - ' + object.get('UserID') + object.get('Note') + object.get('Amount') );
+          console.log(object.id + ' - ' + object.get('UserID') + ' - ' + object.get('Note') + ' - ' + object.get('Amount') );
         }
       },
       error: function(error) {
