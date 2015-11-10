@@ -362,9 +362,6 @@ $("[data-toggle=popover]").popover({
     }
 });
 
-Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
-
-
 function addFunc(event){      
     
     var flag = true;
@@ -382,7 +379,8 @@ function addFunc(event){
 
     if(flag == true) {
         
-        
+        Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
+
         var AllBills = Parse.Object.extend("AllBills");
         var allBills = new AllBills();
 
@@ -404,6 +402,7 @@ function addFunc(event){
 }
 
 function getData() {
+    Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
 
     var AllBills1 = Parse.Object.extend("AllBills");
     var allBills1 = new AllBills1();
@@ -422,7 +421,7 @@ function getData() {
     var b = allBills1.get("Note");
     var c = allBills1.get("Amount");
 
-    console.log(a);
+    console.log(a + " " + b + " " + c );
     }
 </script>
 
