@@ -349,10 +349,11 @@ function getData() {
             cell2.innerHTML = oNote;
             cell3.innerHTML = oAmount;
             cell4.innerHTML = oCreated;
-            cell5.innerHTML = '<input class="resolveButton" class="btn btn-success" style="padding-top:4px;padding-bottom:4px;"    type="button" value="Resolve" />';  
+            cell5.innerHTML = '<input id="resolveButton" class="btn btn-success" style="padding-top:4px;padding-bottom:4px;"    type="button" value="Resolve" />';  
 
-            document.getElementsByClassName("resolveButton").onclick = function() {console.log(oid)};
-
+            document.getElementById("resolveButton").onclick = function() {
+              console.log(oid)};
+              
 
           }
       },
