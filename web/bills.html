@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Bills - Fairwell</title>
+    <title>Bills - Fairwell</title>
 
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -138,34 +138,9 @@
   Add Bill
 </button>
 
-
 <button class="btn btn-success" type="button" onclick="getData()" style="margin-bottom: 20px">
   Get Data
 </button>
-
-
-<!-- <button class="btn btn-success" type="button" data-toggle="collapse1" data-target="#resolveForm" aria-expanded="false" aria-controls="resolveForm" style="margin-bottom: 20px">
-  Resolve Bill
-</button>
-
-<div class = "collapse1" id = "resolveForm">
-    <form role="form">
-    <div class="form-group" style="margin-left: 20px;">
-        <label for="user">UserID:</label>
-        <input type="text" class="form-control" id="usr11">
-    </div>
-
-    <div class="form-group" style="margin-left: 20px;">
-        <label for="note">Note:</label>
-        <input type="text" class="form-control" id="nte11">
-    </div>
-    <div class="form-group" style="margin-left: 20px;">
-        <label for="amnt">Amount:</label>
-        <input type="number" class="form-control" id="amnt11">
-    </div>
-    <button type="submit" class="btn btn-success" style="margin-left: 20px;">Submit</button>
-   </form>
-    </div> -->
 
 <div class="collapse" id="collapseExample">
   <div class="well">
@@ -215,6 +190,7 @@
                                  <td>Food</td>
                                  <td>$100</td>
                                  <td>10/05/2015</td>
+                                 <td><i class="fa fa-usd"></i></td>
                              </tr>
                              <tr>
                                  <td>2</td>
@@ -223,6 +199,7 @@
                                  <td>$200</td>
                                  <td>10/11/2015</td>
                              </tr>
+
                          </tbody>
                      </table>
 
@@ -354,18 +331,15 @@
 <script src="assets/js/demo.js"></script>
 
 <script type="text/javascript">
-
 $("[data-toggle=popover]").popover({
     html: true, 
     content: function() {
       return $('#popover-content').html();
     }
 });
-
 function addFunc(event){      
     
     var flag = true;
-
     var uID    =    document.getElementById("usr1").value;
     var note   =    document.getElementById("nte1").value;
     var amount =    document.getElementById("amnt1").value;
@@ -374,21 +348,16 @@ function addFunc(event){
         
         alert("All fields are required");
         flag = false;
-
     }
-
     if(flag == true) {
         
         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
-
         var AllBills = Parse.Object.extend("AllBills");
         var allBills = new AllBills();
-
         allBills.set("UserID", uID);
         allBills.set("Note", note);
         allBills.set("Amount", amount);
         allBills.set("Resolved", false);
-
         allBills.save(null, {
             sucess: function(allBills){
                 window.location.replace("bills.html");
@@ -400,27 +369,24 @@ function addFunc(event){
         });
     }
 }
-
 function getData() {
     Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
-
     var AllBills1 = Parse.Object.extend("AllBills");
     var allBills1 = new AllBills1();
     var query = new Parse.Query(AllBills1);
-
     query.get("rqWPwN9Aq9", {
       success: function(allBills1) {
-        alert("S");
+        // The object was retrieved successfully.
       },
       error: function(object, error) {
-        alert("Not S");
+        // The object was not retrieved successfully.
+        // error is a Parse.Error with an error code and message.
       }
     });
     
     var a = allBills1.get("UserID");
     var b = allBills1.get("Note");
     var c = allBills1.get("Amount");
-
     console.log(a + " " + b + " " + c );
     }
 </script>
