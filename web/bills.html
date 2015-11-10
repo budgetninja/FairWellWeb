@@ -332,7 +332,7 @@ function resolveFunc(){
         query2.equalTo("UserID" , uID);
         query2.equalTo("Amount" , amount);
         
-        query.find({
+        query2.find({
             success : function(results) {
                 results.set("Resolved", true);
                 results.save();
