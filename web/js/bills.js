@@ -111,6 +111,7 @@ function getData() {
             success: function(results) {
                 results.set("Resolved", true);
                 results.save(null);
+                location.reload();
             }
         });
         
