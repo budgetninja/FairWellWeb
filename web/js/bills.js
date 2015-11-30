@@ -21,8 +21,8 @@ function addFunc(event){
         
         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
         var PaidToUserId;
-        var user_query = Parse.Object.extend("User");
-        var query22 = new Parse.Query(user_query);
+        var query22 = new Parse.Query(Parse.User);
+        console.log(query22);
         query22.equalTo("objectId", "kbAQqCPrdi");  
         query22.find({
           success: function(Paid) {
