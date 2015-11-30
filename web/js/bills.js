@@ -20,11 +20,23 @@ function addFunc(event){
     if(flag == true) {
         
         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
+        var PaidToUserId;
+        var query22 = new Parse.Query(Parse.User);
+        query22.equalTo("email", "mohit@gmail.com");  
+        query22.find({
+          success: function(Paid) {
+             PaidToUserId = Paid.get("First_Name");
+             console.log(PaidToUserId);
+          }, error: function(error){
+        alert("Error: " + error.code + " " + error.message);
+                    }
+        });
+
         var AllBills = Parse.Object.extend("AllBills");
         var allBills = new AllBills();
         var CurrentUser = Parse.User.current();
         var CurrentUserId = String(CurrentUser.id);
-        var PaidToUserId;
+        
         allBills.set("UserID", uID);
         allBills.set("Note", note);
         allBills.set("Amount", amount);
@@ -32,17 +44,7 @@ function addFunc(event){
         allBills.set("PaidBy",CurrentUserId);
         
         
-        var query22 = new Parse.Query(Parse.User);
-        query22.equalTo("email", "mohit@gmail.com");  
-        query22.find({
-          success: function(Paid) {
-              
-             PaidToUserId = Paid.First_Name;
-             console.log(Paid.First_Name);
-          }, error: function(error){
-        alert("Error: " + error.code + " " + error.message);
-                    }
-        });
+        
 
 
         console.log("PaidToUserId") ;      
