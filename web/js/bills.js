@@ -37,7 +37,7 @@ function addFunc(event){
         query.find({
           success: function(Paid) {
               console.log(Paid);
-             PaidToUserId = Paid.get('objectId');
+             PaidToUserId = Paid[0].get('objectId');
           }, error: function(error){
         alert("Error: " + error.code + " " + error.message);
                     }
