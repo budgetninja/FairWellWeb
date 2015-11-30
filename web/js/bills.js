@@ -33,7 +33,7 @@ function addFunc(event){
         
         
         var query = new Parse.Query(Parse.User);
-        query.equalTo("username", uID);  
+        query.equalTo("username", 'mohit');  
         query.find({
           success: function(Paid) {
               console.log(Paid);
