@@ -25,6 +25,7 @@ function addFunc(event){
         query22.equalTo("email", "mohit@gmail.com");  
         query22.find({
           success: function(Paid) {
+             console.log("I am in");
              PaidToUserId = Paid.get("First_Name");
              console.log(PaidToUserId);
           }, error: function(error){
