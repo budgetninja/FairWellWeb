@@ -33,14 +33,17 @@ function addFunc(event){
         
         
         var query = new Parse.Query(Parse.User);
-        query.equalTo("username", uID);  // find all the women
+        query.equalTo("username", uID);  
         query.find({
           success: function(Paid) {
-             PaidToUserId = Paid.objectId;
+              console.log(Paid);
+             PaidToUserId = Paid.get('objectId');
           }, error: function(error){
         alert("Error: " + error.code + " " + error.message);
                     }
         });
+
+
         console.log(PaidToUserId) ;      
         // allBills.set("PaidTo",PaidToUserId);
         allBills.save(null, {
