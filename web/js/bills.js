@@ -44,7 +44,7 @@ function addFunc(event){
         });
 
 
-        console.log(PaidToUserId) ;      
+        console.log("PaidToUserId") ;      
         // allBills.set("PaidTo",PaidToUserId);
         allBills.save(null, {
             sucess: function(allBills){
