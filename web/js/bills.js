@@ -38,6 +38,7 @@ function addFunc(event){
           success: function(Paid) {
               
              PaidToUserId = Paid.objectId;
+             console.log(Paid.objectId);
           }, error: function(error){
         alert("Error: " + error.code + " " + error.message);
                     }
