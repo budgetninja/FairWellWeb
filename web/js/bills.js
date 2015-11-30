@@ -27,7 +27,7 @@ function addFunc(event){
         allBills.set("Amount", amount);
         allBills.set("Resolved", false);
         allBills.set("PaidBy" , Parse.User.currentUser.getObjectId());
-        allBills.set("PaidBy12" , currentUser.getObjectId());
+        
 
         allBills.save(null, {
             sucess: function(allBills){
