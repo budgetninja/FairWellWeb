@@ -22,13 +22,11 @@ function addFunc(event){
         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
         var PaidToUserId;
         var query22 = new Parse.Query(Parse.User);
-        console.log(query22);
-        query22.equalTo("objectId", "kbAQqCPrdi");
-        console.log(query22.equalTo("objectId", "kbAQqCPrdi"));  
+        query22.equalTo("objectId", "kbAQqCPrdi"); 
         query22.find({
           success: function(Paid) {
              console.log("I am in");
-             PaidToUserId = Paid.get("First_Name");
+             PaidToUserId = Paid.First_Name;
              console.log(PaidToUserId);
           }, error: function(error){
              alert("Error: " + error.code + " " + error.message);
