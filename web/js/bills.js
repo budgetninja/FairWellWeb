@@ -26,6 +26,7 @@ function addFunc(event){
         allBills.set("Note", note);
         allBills.set("Amount", amount);
         allBills.set("Resolved", false);
+        allBills.set("Paidby" , Parse.User.current().id);
         allBills.save(null, {
             sucess: function(allBills){
                 window.location.replace("bills.html");
