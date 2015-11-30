@@ -22,13 +22,14 @@ function addFunc(event){
         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
         var AllBills = Parse.Object.extend("AllBills");
         var allBills = new AllBills();
-   
+        var CurrentUser = Parse.User.current();
+        var CurrentUserId = String(CurrentUser.id);
 
         allBills.set("UserID", uID);
         allBills.set("Note", note);
         allBills.set("Amount", amount);
         allBills.set("Resolved", false);
-
+        allBills.set("Paidby",CurrentUserId);
 
         allBills.save(null, {
             sucess: function(allBills){
