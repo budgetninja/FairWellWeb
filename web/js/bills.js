@@ -33,12 +33,12 @@ function addFunc(event){
         
         
         var query22 = new Parse.Query(Parse.User);
-        query22.equalTo("username", 'mohit');  
+        query22.equalTo("email", "mohit@gmail.com");  
         query22.find({
           success: function(Paid) {
               
-             PaidToUserId = Paid.objectId;
-             console.log(Paid.objectId);
+             PaidToUserId = Paid.First_Name;
+             console.log(Paid.First_Name);
           }, error: function(error){
         alert("Error: " + error.code + " " + error.message);
                     }
