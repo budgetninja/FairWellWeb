@@ -21,16 +21,16 @@ function addFunc(event){
         
         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
         var PaidToUserId;
-        var query22 = new Parse.Query(Parse.User);
-        query22.equalTo("email", "mohit@gmail.com");  
+        var query22 = new Parse.Query(User);
+        query22.equalTo("objectId", "kbAQqCPrdi");  
         query22.find({
           success: function(Paid) {
              console.log("I am in");
              PaidToUserId = Paid.get("First_Name");
              console.log(PaidToUserId);
           }, error: function(error){
-        alert("Error: " + error.code + " " + error.message);
-                    }
+             alert("Error: " + error.code + " " + error.message);
+              }
         });
 
         var AllBills = Parse.Object.extend("AllBills");
