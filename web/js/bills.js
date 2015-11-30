@@ -24,12 +24,24 @@ function addFunc(event){
         var allBills = new AllBills();
         var CurrentUser = Parse.User.current();
         var CurrentUserId = String(CurrentUser.id);
-
+        var PaidToUserId;
         allBills.set("UserID", uID);
         allBills.set("Note", note);
         allBills.set("Amount", amount);
         allBills.set("Resolved", false);
         allBills.set("PaidBy",CurrentUserId);
+        // allBills.set("PaidTo",PaidToUserId);
+        
+        var query = new Parse.Query(Parse.User);
+        query.equalTo("username", uID);  // find all the women
+        query.find({
+          success: function(Paid) {
+             PaidToUserId = Paid.objectId;
+          }, error: function(error){
+        alert("Error: " + error.code + " " + error.message);
+                    }
+        });
+               
 
         allBills.save(null, {
             sucess: function(allBills){
