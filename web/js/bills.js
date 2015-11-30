@@ -23,11 +23,12 @@ function addFunc(event){
         var AllBills = Parse.Object.extend("AllBills");
         var allBills = new AllBills();
         var CurrentUser = Parse.User.current();
+        var CurrentUserId = CurrentUser.id;
         allBills.set("UserID", uID);
         allBills.set("Note", note);
         allBills.set("Amount", amount);
         allBills.set("Resolved", false);
-        allBills.set("PaidBy",CurrentUser.id);
+        allBills.set("PaidBy",CurrentUserId );
 
         allBills.save(null, {
             sucess: function(allBills){
