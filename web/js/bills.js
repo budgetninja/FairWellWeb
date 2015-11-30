@@ -20,18 +20,18 @@ function addFunc(event){
     if(flag == true) {
         
         Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
-        var PaidToUserId;
-        var query22 = new Parse.Query(Parse.User);
-        query22.equalTo("objectId", "kbAQqCPrdi"); 
-        query22.find({
-          success: function(Paid) {
-             console.log("I am in");
-             PaidToUserId = Paid.email;
-             console.log(PaidToUserId);
-          }, error: function(error){
-             alert("Error: " + error.code + " " + error.message);
-              }
-        });
+        // var PaidToUserId;
+        // var query22 = new Parse.Query(Parse.User);
+        // query22.equalTo("objectId", "kbAQqCPrdi"); 
+        // query22.find({
+        //   success: function(Paid) {
+        //      console.log("I am in");
+        //      PaidToUserId = Paid.First_Name;
+        //      console.log(PaidToUserId);
+        //   }, error: function(error){
+        //      alert("Error: " + error.code + " " + error.message);
+        //       }
+        // });
 
         var AllBills = Parse.Object.extend("AllBills");
         var allBills = new AllBills();
