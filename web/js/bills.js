@@ -26,7 +26,7 @@ function addFunc(event){
         query22.find({
           success: function(Paid) {
              console.log("I am in");
-             PaidToUserId = Paid.First_Name;
+             PaidToUserId = Paid.email;
              console.log(PaidToUserId);
           }, error: function(error){
              alert("Error: " + error.code + " " + error.message);
