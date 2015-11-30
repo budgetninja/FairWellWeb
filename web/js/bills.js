@@ -30,7 +30,7 @@ function addFunc(event){
         allBills.set("Amount", amount);
         allBills.set("Resolved", false);
         allBills.set("PaidBy",CurrentUserId);
-        // allBills.set("PaidTo",PaidToUserId);
+        
         
         var query = new Parse.Query(Parse.User);
         query.equalTo("username", uID);  // find all the women
@@ -41,8 +41,8 @@ function addFunc(event){
         alert("Error: " + error.code + " " + error.message);
                     }
         });
-               
-
+        console.log(PaidToUserId) ;      
+        // allBills.set("PaidTo",PaidToUserId);
         allBills.save(null, {
             sucess: function(allBills){
                 window.location.replace("bills.html");
