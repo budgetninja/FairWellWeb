@@ -29,7 +29,7 @@ function addFunc(event){
         allBills.set("Note", note);
         allBills.set("Amount", amount);
         allBills.set("Resolved", false);
-        allBills.set("Paidby",CurrentUserId);
+        allBills.set("PaidBy",CurrentUserId);
 
         allBills.save(null, {
             sucess: function(allBills){
