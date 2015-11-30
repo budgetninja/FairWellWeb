@@ -23,7 +23,8 @@ function addFunc(event){
         var PaidToUserId;
         var query22 = new Parse.Query(Parse.User);
         console.log(query22);
-        query22.equalTo("objectId", "kbAQqCPrdi");  
+        query22.equalTo("objectId", "kbAQqCPrdi");
+        console.log(query22.equalTo("objectId", "kbAQqCPrdi"));  
         query22.find({
           success: function(Paid) {
              console.log("I am in");
