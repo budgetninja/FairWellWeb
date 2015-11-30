@@ -32,13 +32,12 @@ function addFunc(event){
         allBills.set("PaidBy",CurrentUserId);
         
         
-        var query = new Parse.Query(Parse.User);
-        query.equalTo("username", 'mohit');  
-        query.find({
+        var query22 = new Parse.Query(Parse.User);
+        query22.equalTo("username", 'mohit');  
+        query22.find({
           success: function(Paid) {
-              console.log(Paid);
-             PaidToUserId = Paid[0].get('objectId');
-             console.log(Paid[0].get('objectId'));
+              
+             PaidToUserId = Paid.objectId;
           }, error: function(error){
         alert("Error: " + error.code + " " + error.message);
                     }
