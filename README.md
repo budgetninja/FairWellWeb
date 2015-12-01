@@ -1,3 +1,3 @@
 #Fairwell Web
 
-www.fairwell.herokuapp.com
+http://fairwell.herokuapp.com
