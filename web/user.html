@@ -129,7 +129,7 @@
                     <div class="col-md-8">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Edit Profile</h4>
+                                <h4 class="title">Update Profile</h4>
                             </div>
                             <div class="content">
                                 <form>
@@ -308,3 +308,17 @@
 	<script src="assets/js/demo.js"></script>
     
 </html>
+
+    <script>
+    $(function(){
+        event.preventDefault();
+        $('#Edit Profile').click(function(event) {
+           Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
+           var currentUser = Parse.User.current();
+           var usernameVal = document.getElementById("username").value; 
+           //var passwordVal = document.getElementById("password").value; 
+		   currentUser.set('Username', $usernameVal);
+return     currentUser.save();
+       });
+    });
+    </script>  

@@ -150,12 +150,12 @@
            var user = new Parse.User();
            var form = document.getElementById("register-form");
            var usernameVal = form.username.value;
+		   var emailVal = form.email.value;
            var passwordVal = form.password.value;
-           var emailVal = form.email.value;
            user.set('username',usernameVal);
            user.set('password',passwordVal);
            user.set('email',emailVal);
-           Parse.User.signUp(usernameVal, passwordVal, emailVal, {
+           user.signUp(null, {
             success: function(user) {
                 form.submit();
                 window.alert("Account Successfully Created!");
