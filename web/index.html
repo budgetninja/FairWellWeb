@@ -155,7 +155,7 @@
            user.set('username',usernameVal);
            user.set('password',passwordVal);
            user.set('email',emailVal);
-           user.signUp(usernameVal, passwordVal, emailVal, {
+           Parse.User.signUp(usernameVal, passwordVal, emailVal, {
             success: function(user) {
                 form.submit();
                 window.alert("Account Successfully Created!");
