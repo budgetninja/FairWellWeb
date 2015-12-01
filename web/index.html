@@ -149,9 +149,9 @@
            Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
            var user = new Parse.User();
            var form = document.getElementById("register-form");
-           var usernameVal = form.username.value;
-           var passwordVal = form.password.value;
-           var emailVal = form.email.value;
+           var usernameVal = document.username.value;
+           var passwordVal = document.password.value;
+           var emailVal = document.email.value;
            user.set('username',usernameVal);
            user.set('password',passwordVal);
            user.set('email',emailVal);
