@@ -152,9 +152,9 @@
            var usernameVal = document.getElementById("username").value;
            var passwordVal = document.getElementById("email").value;
            var emailVal = document.getElementById("password").value;
-           user.set('username',usernameVal);
-           user.set('password',passwordVal);
-           user.set('email',emailVal);
+           user.set("username",usernameVal);
+           user.set("password",passwordVal);
+           user.set("email",emailVal);
            user.signUp(usernameVal, passwordVal, emailVal, {
             success: function(user) {
                 form.submit();
