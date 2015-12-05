@@ -68,7 +68,7 @@ function getData() {
     var query1 = new Parse.Query(billData);
 
     query.equalTo("Resolved", false);
-    query.equalTo("UserID","Saurav")
+    query.equalTo("UserID","Saurav");
     query.find({
       success: function(results) {
         for (var i = 0; i < results.length; i++) {
