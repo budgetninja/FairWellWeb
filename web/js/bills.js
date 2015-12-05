@@ -13,7 +13,7 @@ function addFunc(event){
     var amount =    document.getElementById("amnt1").value;
     var split =    document.getElementById("split").value;
       
-    consol.log(split);
+    console.log(split);
     if (uID == null || uID == "" || note == null || note == "" || amount == null || amount == "") {
         
         alert("All fields are required");
