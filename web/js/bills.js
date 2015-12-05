@@ -14,7 +14,6 @@ function addFunc(event){
     var amount1 =    parseInt(document.getElementById("amnt1").value);
     var split =    parseInt(document.getElementById("split").value);
 
-
     if (uID == null || uID == "" || note == null || note == "" || amount == null || amount == "") {
         
         alert("All fields are required");
@@ -46,10 +45,7 @@ function addFunc(event){
         allBills.set("Amount", amount);
         allBills.set("Resolved", false);
         allBills.set("PaidBy",CurrentUserId);
-        allBills.set("AmountInt",amount1);
-        console.log(amount1);
-        console.log(amount1 / split);
-
+        allBills.set("AmountInt",amount1 / split);
 
         allBills.save(null, {
             sucess: function(allBills){
