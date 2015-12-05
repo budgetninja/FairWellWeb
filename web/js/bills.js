@@ -12,6 +12,8 @@ function addFunc(event){
     var note   =    document.getElementById("nte1").value;
     var amount =    document.getElementById("amnt1").value;
     var amount1 =    parseInt(document.getElementById("amnt1").value);
+    var split =    parseInt(document.getElementById("split").value);
+
 
     if (uID == null || uID == "" || note == null || note == "" || amount == null || amount == "") {
         
@@ -46,7 +48,9 @@ function addFunc(event){
         allBills.set("PaidBy",CurrentUserId);
         allBills.set("AmountInt",amount1);
         console.log(amount1);
-        
+        console.log(amount1 / split);
+
+
         allBills.save(null, {
             sucess: function(allBills){
                 window.location.replace("bills.html");
