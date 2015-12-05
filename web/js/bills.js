@@ -66,7 +66,6 @@ function getData() {
     console.log(CurrentUserId);
 
     query.equalTo("Resolved", false);
-    query.equalTo("UserID","Saurav");
     query.notEqualTo("PaidBy",CurrentUserId);;
     query.find({
       success: function(results) {
