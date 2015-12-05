@@ -11,9 +11,9 @@ function addFunc(event){
     var uID    =    document.getElementById("usr1").value;
     var note   =    document.getElementById("nte1").value;
     var amount =    document.getElementById("amnt1").value;
-    var split =    document.getElementById("split").value;
+    // var split =    document.getElementById("split").value;
       
-    console.log(split);
+    // console.log(split);
     if (uID == null || uID == "" || note == null || note == "" || amount == null || amount == "") {
         
         alert("All fields are required");
