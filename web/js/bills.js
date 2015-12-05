@@ -43,6 +43,7 @@ function addFunc(event){
         allBills.set("UserID", uID);
         allBills.set("Note", note);
         allBills.set("Amount", amount);
+        allBills.set("AmountInt", amount);
         allBills.set("Resolved", false);
         allBills.set("PaidBy",CurrentUserId);
         
