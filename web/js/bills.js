@@ -36,16 +36,13 @@ function addFunc(event){
         var AllBills = Parse.Object.extend("AllBills");
         var allBills = new AllBills();
         var CurrentUser = Parse.User.current();
-        var CurrentUserId = String(CurrentUser.id);
+        var CurrentUserId = String(CurrentUser.username);
         
         allBills.set("UserID", uID);
         allBills.set("Note", note);
         allBills.set("Amount", amount);
         allBills.set("Resolved", false);
         allBills.set("PaidBy",CurrentUserId);
-        
-
-        
 
 
         console.log("PaidToUserId") ;      
