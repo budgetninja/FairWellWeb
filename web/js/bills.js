@@ -36,7 +36,6 @@ function addFunc(event){
         var AllBills = Parse.Object.extend("AllBills");
         var allBills = new AllBills();
         var CurrentUser = Parse.User.current();
-
         var CurrentUserId = String(CurrentUser.id);
         
         allBills.set("UserID", uID);
@@ -45,9 +44,6 @@ function addFunc(event){
         allBills.set("Resolved", false);
         allBills.set("PaidBy",CurrentUserId);
 
-
-        console.log(CurrentUser) ;      
-        // allBills.set("PaidTo",PaidToUserId);
         allBills.save(null, {
             sucess: function(allBills){
                 window.location.replace("bills.html");
@@ -64,9 +60,12 @@ function getData() {
     var billData = Parse.Object.extend("AllBills");
     var query = new Parse.Query(billData);
     var query1 = new Parse.Query(billData);
-
+    var CurrentUser = Parse.User.current();
+    var CurrentUserId = String(CurrentUser.id);
+    
     query.equalTo("Resolved", false);
     query.equalTo("UserID","Saurav");
+    query.notEqualTo("PaidBy",CurrentUserId);;
     query.find({
       success: function(results) {
         for (var i = 0; i < results.length; i++) {
