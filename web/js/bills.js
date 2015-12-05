@@ -63,6 +63,8 @@ function getData() {
     var CurrentUser = Parse.User.current();
     var CurrentUserId = String(CurrentUser.id);
     
+    console.log(CurrentUserId);
+
     query.equalTo("Resolved", false);
     query.equalTo("UserID","Saurav");
     query.notEqualTo("PaidBy",CurrentUserId);;
