@@ -51,6 +51,7 @@ function getData() {
     var billData = Parse.Object.extend("AllBills");
     var query = new Parse.Query(billData);
     var query1 = new Parse.Query(billData);
+    var query2 = new Parse.Query(billData);
     var CurrentUser = Parse.User.current();
     var CurrentUserId = String(CurrentUser.id);
     
@@ -84,6 +85,32 @@ function getData() {
       }}
     });
     
+    query2.equalTo("Resolved", false);
+    query2.equalTo("PaidBy",CurrentUserId);
+    query2.find({
+      success: function(results) {
+        for (var i = 0; i < results.length; i++) {
+          var object = results[i];
+          var oid = String(object.id);
+          var oUID = object.get('UserID');
+          var oNote = object.get('Note');
+          var oAmount = object.get('Amount');
+          var oC = String(object.get('createdAt'));
+          var oCreated = oC.substr(3,12);
+          var table = document.getElementById("tablebody");
+          var row = table.insertRow(i);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          var cell4 = row.insertCell(3);
+          var cell5 = row.insertCell(4);
+            cell1.innerHTML = oUID;
+            cell2.innerHTML = oNote;
+            cell3.innerHTML = oAmount;
+            cell4.innerHTML = oCreated;
+      }}
+    });
+
     query1.equalTo("Resolved", true);
     query1.find({
       success: function(results1) {
