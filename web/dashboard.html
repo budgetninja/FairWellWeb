@@ -154,13 +154,13 @@
       success: function(results) {
         
           var object = results[0];
-          var oid = String(object.id);
-          var oUID = object.get('UserID');
-          var oNote = object.get('Note');
-          var oAmount = object.get('Amount');
-          var oC = String(object.get('createdAt'));
-          var oCreated = oC.substr(3,12);
-          console.log(oAmount);
+          // var oid = String(object.id);
+          // var oUID = object.get('UserID');
+          // var oNote = object.get('Note');
+          // var oAmount = object.get('Amount');
+          // var oC = String(object.get('createdAt'));
+          // var oCreated = oC.substr(3,12);
+          console.log(object);
 
         },
       error: function(error) {
