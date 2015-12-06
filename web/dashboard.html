@@ -152,8 +152,8 @@
     query.notEqualTo("PaidBy",CurrentUserId);
     query.find({
       success: function(results) {
-        for (var i = 0; i < results.length; i++) {
-          var object = results[i];
+        
+          var object = results[0];
           var oid = String(object.id);
           var oUID = object.get('UserID');
           var oNote = object.get('Note');
@@ -162,7 +162,7 @@
           var oCreated = oC.substr(3,12);
           console.log(oAmount);
 
-      }},
+        },
       error: function(error) {
         alert("Error: " + error.code + " " + error.message);
       }
