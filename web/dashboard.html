@@ -134,41 +134,6 @@
     button{margin-left: 20px;} 
     </style>  
 
-    <script type="text/javascript">
-    Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
-    var element = document.getElementById("welMessage");
-    element.innerHTML = "Welcome Back " + (Parse.User.current().getUsername());
-    var balance = document.getElementById("balance");
-
-    var billData = Parse.Object.extend("AllBills");
-    var query = new Parse.Query(billData);
-    var query1 = new Parse.Query(billData);
-    var CurrentUser = Parse.User.current();
-    var CurrentUserId = String(CurrentUser.id);
-
-    query.equalTo("Resolved", false);
-    query.find({
-      success: function(results) {
-        
-          var object = results[0];
-          // var oid = String(object.id);
-          // var oUID = object.get('UserID');
-          // var oNote = object.get('Note');
-          // var oC = String(object.get('createdAt'));
-          // var oCreated = oC.substr(3,12);
-          if(object == undefined)  balance.innerHTML = "# Current Balance : $" + "0.0";
-          else {
-            var oAmount = object.get('Amount');
-            balance.innerHTML = "# Current Balance : $" + oAmount;
-          }
-        },
-      error: function(error) {
-        alert("Error: " + error.code + " " + error.message);
-      }
-    });
-
-    </script>  
-
     <h2 id="balance"> # Current Balance : <span style="color:green"> $32.50 </span> </h2>
 
     <button type="button" class="btn btn-primary"> <a href = "bills.html">View Bills </a></button>
@@ -239,6 +204,41 @@
     <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
     <script src="assets/js/demo.js"></script>
 
+    <script type="text/javascript">
+    Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
+    var element = document.getElementById("welMessage");
+    element.innerHTML = "Welcome Back " + (Parse.User.current().getUsername());
+    var balance = document.getElementById("balance");
+
+    var billData = Parse.Object.extend("AllBills");
+    var query = new Parse.Query(billData);
+    var query1 = new Parse.Query(billData);
+    var CurrentUser = Parse.User.current();
+    var CurrentUserId = String(CurrentUser.id);
+
+    query.equalTo("Resolved", false);
+    query.find({
+      success: function(results) {
+        
+          var object = results[0];
+          // var oid = String(object.id);
+          // var oUID = object.get('UserID');
+          // var oNote = object.get('Note');
+          // var oC = String(object.get('createdAt'));
+          // var oCreated = oC.substr(3,12);
+          if(object == undefined)  balance.innerHTML = "# Current Balance : $" + "0.0";
+          else {
+            var oAmount = object.get('Amount');
+            balance.innerHTML = "# Current Balance : $" + oAmount;
+          }
+        },
+      error: function(error) {
+        alert("Error: " + error.code + " " + error.message);
+      }
+    });
+
+    </script>  
+    
     <script>
     $(function(){
         event.preventDefault();
