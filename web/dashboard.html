@@ -142,17 +142,31 @@
 
     var billData = Parse.Object.extend("AllBills");
     var query = new Parse.Query(billData);
-        query.equalTo("Resolved", false);
+    var query1 = new Parse.Query(billData);
+    var CurrentUser = Parse.User.current();
+    var CurrentUserId = String(CurrentUser.id);
+    
+    console.log(CurrentUserId);
 
-        query.find({
-             success: function(results) {
-                var object = results[0];
-                var oAmount = object.get('Amount');
-                console.log(oAmount);
-            },
+    query.equalTo("Resolved", false);
+    query.notEqualTo("PaidBy",CurrentUserId);
+    query.find({
+      success: function(results) {
+        for (var i = 0; i < results.length; i++) {
+          var object = results[i];
+          var oid = String(object.id);
+          var oUID = object.get('UserID');
+          var oNote = object.get('Note');
+          var oAmount = object.get('Amount');
+          var oC = String(object.get('createdAt'));
+          var oCreated = oC.substr(3,12);
+          console.log(oAmount);
+
+      }},
       error: function(error) {
         alert("Error: " + error.code + " " + error.message);
-      }});
+      }
+    });
 
     </script>  
 
