@@ -231,14 +231,11 @@
             var oAmount = object.get('Amount');
             balance.innerHTML = "# Current Balance : $" + oAmount;
           }
-        },
-      error: function(error) {
-        alert("Error: " + error.code + " " + error.message);
-      }
+        }
     });
 
     </script>  
-    
+
     <script>
     $(function(){
         event.preventDefault();

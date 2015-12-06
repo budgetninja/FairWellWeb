@@ -57,7 +57,7 @@ function getData() {
     console.log(CurrentUserId);
 
     query.equalTo("Resolved", false);
-    query.notEqualTo("PaidBy",CurrentUserId);;
+    query.notEqualTo("PaidBy",CurrentUserId);
     query.find({
       success: function(results) {
         for (var i = 0; i < results.length; i++) {
@@ -81,10 +81,7 @@ function getData() {
             cell4.innerHTML = oCreated;
             cell5.innerHTML = '<input id="resolveButton" class="btn btn-success" style="padding-top:4px;padding-bottom:4px;"    type="button" value="Resolve" />';  
             document.getElementById("resolveButton").onclick = function() { resolveFunc(oid)}; 
-      }},
-      error: function(error) {
-        alert("Error: " + error.code + " " + error.message);
-      }
+      }}
     });
     
     query1.equalTo("Resolved", true);
