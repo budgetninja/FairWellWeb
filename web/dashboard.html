@@ -145,11 +145,8 @@
     var query1 = new Parse.Query(billData);
     var CurrentUser = Parse.User.current();
     var CurrentUserId = String(CurrentUser.id);
-    
-    console.log(CurrentUserId);
 
     query.equalTo("Resolved", false);
-    query.notEqualTo("PaidBy",CurrentUserId);
     query.find({
       success: function(results) {
         
