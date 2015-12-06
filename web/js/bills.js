@@ -65,7 +65,7 @@ function getData() {
           var oid = String(object.id);
           var oUID = object.get('UserID');
           var oNote = object.get('Note');
-          var oAmount = object.get('Amount');
+          var oAmount = object.get('AmountInt');
           var oC = String(object.get('createdAt'));
           var oCreated = oC.substr(3,12);
           var table = document.getElementById("tablebody");
