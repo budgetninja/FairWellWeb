@@ -106,9 +106,6 @@ function getData() {
             cell3.innerHTML = oAmount1;
             cell4.innerHTML = oCreated1;
         }
-      },
-      error: function(error) {
-        alert("Error: " + error.code + " " + error.message);
       }
     });
     }
