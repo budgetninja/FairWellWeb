@@ -38,13 +38,6 @@
 
             <div class="wrapper">
                 <div class="sidebar" data-color="olive" data-image="assets/img/sidebar-5.jpg">    
-
-            <!--   
-                
-                Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" 
-                Tip 2: you can also add an image using data-image tag
-                
-            -->
             
             <div class="sidebar-wrapper">
                 <div class="logo">
@@ -145,9 +138,25 @@
     Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
     var element = document.getElementById("welMessage");
     element.innerHTML = "Welcome Back " + (Parse.User.current().getUsername());
+    var balance == document.getElementById("balance");
+
+    var billData = Parse.Object.extend("AllBills");
+    var query = new Parse.Query(billData);
+        query.equalTo("Resolved", false);
+
+        query.find({
+             success: function(results) {
+                var object = results[0];
+                var oAmount = object.get('Amount');
+                console.log(oAmount);
+            },
+      error: function(error) {
+        alert("Error: " + error.code + " " + error.message);
+      });
+
     </script>  
 
-    <h2> # Current Balance : <span style="color:green"> $32.50 </span> </h2>
+    <h2 id="balance"> # Current Balance : <span style="color:green"> $32.50 </span> </h2>
 
     <button type="button" class="btn btn-primary"> <a href = "bills.html">View Bills </a></button>
     <button type="button" class="btn btn-primary"><a href = "bills.html"> Add Bills </a></button>
