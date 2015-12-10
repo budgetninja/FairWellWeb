@@ -212,7 +212,7 @@
     Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl");
 
     var element = document.getElementById("welMessage");
-    var loggedUser = Parse.User.current();
+    var loggedUser = Parse.User.current().getUsername();
     element.innerHTML = "Welcome Back " + loggedUser;
     var balance = document.getElementById("balance");
 
