@@ -145,8 +145,9 @@
 
     <script>
     $(function(){
-        event.preventDefault();
+        
         $('#register-form').submit(function(event) {
+            event.preventDefault();
            Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl");
 
            var user = new Parse.User();
@@ -168,7 +169,7 @@
             }
         });
        });
-         event.preventDefault(); 
+    
     });
     </script>  
 
