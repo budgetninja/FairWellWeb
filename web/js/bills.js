@@ -21,7 +21,8 @@ function addFunc(event){
     }
     if(flag == true) {
         
-        Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
+        Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl");
+
 
         var AllBills = Parse.Object.extend("AllBills");
         var allBills = new AllBills();
@@ -47,7 +48,8 @@ function addFunc(event){
 }
 
 function getData() {
-    Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
+    Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl");
+
     var billData = Parse.Object.extend("AllBills");
     var query = new Parse.Query(billData);
     var query1 = new Parse.Query(billData);
@@ -140,7 +142,8 @@ function getData() {
 
     function resolveFunc(oid){
         console.log(oid);
-        Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
+        Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl");
+
         var billData = Parse.Object.extend("AllBills");
         var query = new Parse.Query(billData);
         query.get(oid , {

@@ -208,7 +208,8 @@
     <script src="assets/js/demo.js"></script>
 
     <script type="text/javascript">
-    Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
+    Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl");
+
     var element = document.getElementById("welMessage");
     element.innerHTML = "Welcome Back " + (Parse.User.current().getUsername());
     var balance = document.getElementById("balance");
@@ -243,7 +244,8 @@
     $(function(){
         event.preventDefault();
         $('#logOut').click(function(event) {
-           Parse.initialize("EbYqSTBrerVZ4b6B48oa52fqjHWKDS6tpO9SHghT", "ocbuxery8PF5ixd2w7xLbixRdsL0WUJeT4k3ayle");
+           Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl");
+
            console.log("Logged out");  
            Parse.User.logOut();     
             
