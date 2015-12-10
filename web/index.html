@@ -159,8 +159,8 @@
            user.set('email',emailVal);
            user.signUp(null, {
             success: function(user) {
-                form.submit();
                 window.alert("Account Successfully Created!");
+                form.submit();
                 location.reload();
             }, error: function(user,error){
                 console.error('ERROR : ' + error.code + " " + error.message);
