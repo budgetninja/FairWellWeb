@@ -163,6 +163,7 @@
                 form.submit();
                 location.reload();
             }, error: function(user,error){
+                alert(error.code + " " + error.message);
                 console.error('ERROR : ' + error.code + " " + error.message);
             }
         });
