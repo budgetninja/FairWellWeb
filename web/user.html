@@ -149,7 +149,7 @@
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label>Username</label>
-                                                <input type="text" class="form-control" placeholder="Username" value="Mohit">
+                                                <input type="text" class="form-control" placeholder="Username" value="">
                                             </div>       
                                         </div>
                                         <div class="col-md-4">
@@ -164,7 +164,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>First Name</label>
-                                                <input type="text" class="form-control" placeholder="Company" value="Mohit">
+                                                <input type="text" class="form-control" placeholder="Company" value="" id="FirstName">
                                             </div>        
                                         </div>
                                         <div class="col-md-6">
@@ -314,6 +314,15 @@
 	<script src="assets/js/demo.js"></script>
     
 </html>
+
+<script type="text/javascript">
+    Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl");
+
+    var element = document.getElementById("FirstName");
+        var loggedUser = Parse.User.current().getUsername();
+    element.innerHTML = loggedUser;
+    </script>
+
 
     <script>
     $(function(){
