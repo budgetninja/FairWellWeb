@@ -212,7 +212,8 @@
     Parse.initialize("s1ySDCya6vuDDvFaxKgEGZLxOvdf8pfG4YMtvjcy", "KGJRCBGgvuyfoiqt8hakSJHODu1BeXtqqGNk0Hnl");
 
     var element = document.getElementById("welMessage");
-    element.innerHTML = "Welcome Back " + (Parse.User.current().getUsername());
+    var loggedUser = Parse.User.current();
+    element.innerHTML = "Welcome Back " + loggedUser;
     var balance = document.getElementById("balance");
 
     var billData = Parse.Object.extend("AllBills");
